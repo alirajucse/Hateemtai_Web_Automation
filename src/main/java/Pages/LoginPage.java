@@ -17,6 +17,14 @@ public class LoginPage {
     private By next= By.xpath("//div[@id='identifierNext']//div[2]");
     private By password= By.xpath("//input[@name='password']");
     private By invalidLoginCredentialsCheck= By.xpath("//strong[normalize-space()='Invalid username or password.']");
+    private By popupLoginEmailField= By.xpath("//input[@id='login_email']");
+    private By popupLoginPasswordField= By.xpath("//input[@id='login_password']");
+    private By popUpLoginSubmitButton= By.xpath("//body//div[@role='dialog']//div[@role='document']//div//div//div//div[3]//button[1]");
+    private By checkout= By.xpath("//html//body//div//div//header//div//div//div//div//div//div//div//ul//div//div//div//div//div//button");
+    private By fbLoginButton= By.xpath("//div[@id='signuptab-pane-second']//form//div//div//button[@type='button'][normalize-space()='Login with Facebook']");
+    private By fbEmailField= By.xpath("//input[@id='email']");
+    private By fbPasswordField= By.xpath("//input[@id='pass']");
+    private By fbLoginConfirmButton= By.xpath("//input[@name='login']");
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -43,7 +51,7 @@ public class LoginPage {
     }
 
     public void loginverify() throws InterruptedException{
-        Thread.sleep(50000);
+        Thread.sleep(100000);
         driver.findElement(loginVerify).click();
         Thread.sleep(30000);
         String actualText= driver.findElement(actualResult).getText();
@@ -90,13 +98,42 @@ public class LoginPage {
 
 // Switch back to original browser (first window)
         driver.switchTo().window(winHandleBefore);
-
-
     }
-
+    public void popUpLogin(String popUpmail,String popUpPwrd) throws InterruptedException {
+        Thread.sleep(50000);
+        driver.findElement(checkout).click();
+        Thread.sleep(100000);
+        driver.findElement(popupLoginEmailField).sendKeys(popUpmail);
+        Thread.sleep(5000);
+        driver.findElement(popupLoginPasswordField).sendKeys(popUpPwrd);
+        Thread.sleep(5000);
+        driver.findElement(popUpLoginSubmitButton).click();
+    }
     public SecureAreaPage clickLoginButton1(){
         driver.findElement(loginButton).click();
         return new SecureAreaPage(driver);
     }
 
+    public void facebookLogin(String fbEmail,String fbPasswrd) throws InterruptedException {
+       Thread.sleep(100000);
+       driver.findElement(fbLoginButton).click();
+       Thread.sleep(100000);
+        // Store the current window handle
+        String winHandleBefore = driver.getWindowHandle();
+// Switch to new window opened
+        for(String winHandle : driver.getWindowHandles()){
+            driver.switchTo().window(winHandle);
+        }
+        driver.findElement(fbEmailField).sendKeys(fbEmail);
+        Thread.sleep(5000);
+        driver.findElement(fbPasswordField).sendKeys(fbPasswrd);
+        Thread.sleep(5000);
+        driver.findElement(fbLoginConfirmButton).click();
+        Thread.sleep(100000);
+        // Close the new window, if that window no more required
+        driver.close();
+
+// Switch back to original browser (first window)
+        driver.switchTo().window(winHandleBefore);
+    }
 }

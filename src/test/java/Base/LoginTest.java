@@ -24,12 +24,23 @@ public void invalidLoginCredentialsVerify() throws InterruptedException {
     loginPage.clickLoginButton();
     loginPage.tryWithInvalidCredentials();
 }
-
 @Test
 public void loginWithGmail() throws InterruptedException {
     loginPage.clickLoginText();
    loginPage.clickGmailLoginButton();
    loginPage.credentialsInput("alirajujnu1@gmail.com","pP@01921666");
+}
+@Test
+public void popUpLoginTest() throws InterruptedException {
+    checkoutPage.productAddtoCart();
+    loginPage.popUpLogin("raju82@ht.com","pP@01921666");
+    loginPage.loginverify();
+}
+@Test
+public void fbLoginTest() throws InterruptedException {
+    loginPage.clickLoginText();
+    loginPage.facebookLogin("alirajujnubd@gmail.com","pP@01921666");
+    loginPage.loginverify();
 }
 
 }

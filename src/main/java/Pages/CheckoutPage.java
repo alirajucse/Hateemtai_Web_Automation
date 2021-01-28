@@ -22,7 +22,7 @@ public class CheckoutPage {
     private By product= By.xpath("//body//div[@id='root']//div[@id='store']//div//div//div//div[1]//div[1]//div[1]//div[1]//div[1]//a[1]//div[1]//div[1]");
     private By addToCart= By.xpath("//button[normalize-space()='add to cart']");
     private By cart= By.xpath("//img[@src='./img/cartIcon.png']");
-    private By checkout= By.xpath("//a[normalize-space()='Checkout']");
+    private By checkout= By.xpath("//html//body//div//div//header//div//div//div//div//div//div//div//ul//div//div//div//div//div//button");
     private By paymentMethodCashOnDelivary= By.xpath("//label[normalize-space()='Cash on Delivery']");
     private By placeOrder= By.xpath("//body//div[@id='root']//form//div//button[1]");
     private By successfulOrderMessage= By.xpath("//p[normalize-space()='Your Order has been successfully processed.']");
@@ -36,6 +36,8 @@ public class CheckoutPage {
         driver.findElement(FirstMenuItem).click();
         Thread.sleep(100000);
         driver.findElement(product).click();
+        Thread.sleep(100000);
+        driver.findElement(addToCart).click();
         Thread.sleep(100000);
         driver.findElement(cart).click();
         Thread.sleep(100000);
