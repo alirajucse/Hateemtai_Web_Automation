@@ -16,6 +16,7 @@ public class LoginPage {
     private By email= By.xpath("//input[@id='identifierId']");
     private By next= By.xpath("//div[@id='identifierNext']//div[2]");
     private By password= By.xpath("//input[@name='password']");
+    private By invalidLoginCredentialsCheck= By.xpath("//strong[normalize-space()='Invalid username or password.']");
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -46,7 +47,7 @@ public class LoginPage {
         driver.findElement(loginVerify).click();
         Thread.sleep(30000);
         String actualText= driver.findElement(actualResult).getText();
-        String expectedResult="MY ACCOU";
+        String expectedResult="MY ACCOUNT";
         Assert.assertEquals(expectedResult,actualText);
     }
 
@@ -54,6 +55,15 @@ public class LoginPage {
         Thread.sleep(50000);
         driver.findElement(gmailButton).click();
 
+    }
+
+    public void tryWithInvalidCredentials() throws InterruptedException {
+        Thread.sleep(5000);
+        if( driver.findElement(invalidLoginCredentialsCheck).isDisplayed()){
+            System.out.println("Invalid username or password");
+        }else{
+            System.out.println("Testcase failed");
+        }
     }
 
     public void credentialsInput(String mail,String pswrd) throws InterruptedException {

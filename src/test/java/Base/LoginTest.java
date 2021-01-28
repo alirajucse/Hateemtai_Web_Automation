@@ -17,6 +17,15 @@ public void testSuccessfulLogin() throws InterruptedException {
 }
 
 @Test
+public void invalidLoginCredentialsVerify() throws InterruptedException {
+    loginPage.clickLoginText();
+    loginPage.setUsername("raju82@ht.com");
+    loginPage.setPassword("pP@019");
+    loginPage.clickLoginButton();
+    loginPage.tryWithInvalidCredentials();
+}
+
+@Test
 public void loginWithGmail() throws InterruptedException {
     loginPage.clickLoginText();
    loginPage.clickGmailLoginButton();
