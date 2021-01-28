@@ -40,7 +40,6 @@ public void popUpLoginTest() throws InterruptedException {
 public void fbLoginTest() throws InterruptedException {
     loginPage.clickLoginText();
     loginPage.facebookLogin("alirajujnubd@gmail.com","pP@01921666");
-    loginPage.loginverify();
 }
 
 }

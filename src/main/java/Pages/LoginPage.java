@@ -115,25 +115,33 @@ public class LoginPage {
     }
 
     public void facebookLogin(String fbEmail,String fbPasswrd) throws InterruptedException {
-       Thread.sleep(100000);
-       driver.findElement(fbLoginButton).click();
-       Thread.sleep(100000);
+
+        Thread.sleep(100000);
+        driver.findElement(fbLoginButton).click();
+        Thread.sleep(100000);
         // Store the current window handle
         String winHandleBefore = driver.getWindowHandle();
 // Switch to new window opened
-        for(String winHandle : driver.getWindowHandles()){
+        for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        driver.findElement(fbEmailField).sendKeys(fbEmail);
-        Thread.sleep(5000);
-        driver.findElement(fbPasswordField).sendKeys(fbPasswrd);
-        Thread.sleep(5000);
-        driver.findElement(fbLoginConfirmButton).click();
-        Thread.sleep(100000);
-        // Close the new window, if that window no more required
-        driver.close();
+            driver.findElement(fbEmailField).sendKeys(fbEmail);
+            Thread.sleep(5000);
+            driver.findElement(fbPasswordField).sendKeys(fbPasswrd);
+            Thread.sleep(5000);
+            driver.findElement(fbLoginConfirmButton).click();
+            Thread.sleep(100000);
+            // Close the new window, if that window no more required
+            driver.close();
 
 // Switch back to original browser (first window)
-        driver.switchTo().window(winHandleBefore);
-    }
+            driver.switchTo().window(winHandleBefore);
+            Thread.sleep(100000);
+            driver.findElement(loginVerify).click();
+            Thread.sleep(30000);
+            String actualText = driver.findElement(actualResult).getText();
+            String expectedResult = "MY ACCOUNT";
+            Assert.assertEquals(expectedResult, actualText);
+            driver.close();
+        }
 }
