@@ -29,6 +29,7 @@ public void loginWithGmail() throws InterruptedException {
     loginPage.clickLoginText();
    loginPage.clickGmailLoginButton();
    loginPage.credentialsInput("alirajujnu1@gmail.com","pP@01921666");
+   loginPage.loginverify();
 }
 @Test
 public void popUpLoginTest() throws InterruptedException {
@@ -39,7 +40,23 @@ public void popUpLoginTest() throws InterruptedException {
 @Test
 public void fbLoginTest() throws InterruptedException {
     loginPage.clickLoginText();
-    loginPage.facebookLogin("alirajujnubd@gmail.com","pP@01921666");
+    loginPage.ClickfacebookLoginButton();
+    loginPage.fbcredentials("alirajujnubd@gmail.com","pP@01921666");
+    loginPage.loginverify();
+}
+@Test
+public void popUPGmailLoginTest() throws InterruptedException {
+    checkoutPage.productAddtoCart();
+    loginPage.popUPGmailLogin();
+    loginPage.credentialsInput("alirajujnu1@gmail.com","pP@01921666");
+    loginPage.loginverify();
+}
+@Test
+public void popUPFacebookLoginTest() throws InterruptedException {
+    checkoutPage.productAddtoCart();
+    loginPage.popUpFbLogin();
+    loginPage.fbcredentials("alirajujnubd@gmail.com","pP@01921666");
+    loginPage.loginverify();
 }
 
 }

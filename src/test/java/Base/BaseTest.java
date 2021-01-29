@@ -23,9 +23,9 @@ public class BaseTest {
         System.setProperty("webdriver.edge.driver", "resource/msedgedriver.exe");
         driver = new EdgeDriver();
         driver.get(baseUrl);
+        Thread.sleep(10000);
         //1 - Maximize the window
         driver.manage().window().maximize();
-        Thread.sleep(50000);
         loginPage=new LoginPage(driver);
         signupPage=new SignupPage(driver);
         checkoutPage=new CheckoutPage(driver);

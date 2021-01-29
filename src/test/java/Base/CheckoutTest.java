@@ -19,6 +19,18 @@ public class CheckoutTest extends BaseTest{
         checkoutPage.productAddtoCart();
         checkoutPage.checkoutMethod();
     }
-
+    @Test
+    public void popUPCheckoutTest() throws InterruptedException {
+        checkoutPage.productAddtoCart();
+        loginPage.popUpLogin("raju82@ht.com","pP@01921666");
+        checkoutPage.checkoutMethod();
+    }
+    @Test
+    public void popUPFBCheckoutTest() throws InterruptedException {
+        checkoutPage.productAddtoCart();
+        checkoutPage.fbPopUpCheckout();
+        loginPage.popUpFbLogin();
+        checkoutPage.checkoutMethod();
+    }
 
 }
