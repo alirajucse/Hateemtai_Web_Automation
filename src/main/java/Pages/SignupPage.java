@@ -17,6 +17,14 @@ public class SignupPage {
     private By next= By.xpath("//div[@id='identifierNext']//div[2]");
     private By password= By.xpath("//input[@name='password']");
     private By invalidLoginCredentialsCheck= By.xpath("//strong[normalize-space()='Invalid username or password.']");
+    private By popUPSignup= By.xpath("//div[normalize-space()='SIGN UP']");
+    private By popUpUserName=By.xpath("//input[@name='firstName']");
+    private By popUPEmail= By.xpath("//div[@role='document']//div//div//div//form//div//input[@name='email']");
+    private By popUPPhoneNUmber= By.xpath("//input[@name='mobilePhone']");
+    private By popUPPassword= By.xpath("//input[@name='password']");
+    private By popUPAgreeCheckbox= By.xpath("//label[@for='terms']//span");
+    private By popUPSignUPButton= By.xpath("//div[@role='dialog']//div[7]//button[1]");
+    private By signUPVerify = By.id("ddlProduct");
 
     public SignupPage(WebDriver driver){
         this.driver = driver;
@@ -47,8 +55,33 @@ public class SignupPage {
         driver.findElement(signupButton).click();
     }
 
-    public void successfulSignUPVerify(){
+    public void successfulSignUPVerify() throws InterruptedException {
+        Thread.sleep(40000);
+        Boolean signUpVerify= driver.findElement(signUPVerify).isDisplayed();
+        if(signUpVerify){
+            System.out.println("Sign up successful");
+        }
+        else{
+            System.out.println("Sign up failed");
+        }
 
     }
-
+    public void clickPopUPSignupButton() throws InterruptedException {
+        Thread.sleep(10000);
+        driver.findElement(popUPSignup).click();
+    }
+    public void popUPSignUPCredentials(String usrName,String email,String phone,String passwrd) throws InterruptedException {
+        Thread.sleep(5000);
+        driver.findElement(popUpUserName).sendKeys(usrName);
+        Thread.sleep(2000);
+        driver.findElement(popUPEmail).sendKeys(email);
+        Thread.sleep(2000);
+        driver.findElement(popUPPhoneNUmber).sendKeys(phone);
+        Thread.sleep(2000);
+        driver.findElement(popUPPassword).sendKeys(passwrd);
+        Thread.sleep(3000);
+        driver.findElement(popUPAgreeCheckbox).click();
+        Thread.sleep(4000);
+        driver.findElement(popUPSignUPButton).click();
+    }
 }

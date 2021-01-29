@@ -26,30 +26,31 @@ public class CheckoutPage {
     private By placeOrder= By.xpath("//body//div[@id='root']//form//div//button[1]");
     private By successfulOrderMessage= By.xpath("//p[normalize-space()='Your Order has been successfully processed.']");
     private By popUPFBButton=By.xpath("//body/div/div/div/div/div/div/div/div/p/span/button[1]");
+    private By popUpGmailButton= By.xpath("//body/div[@role='dialog']/div[@role='dialog']/div/div[@role='document']/div/div/div/div/p/button[1]");
 
     public CheckoutPage(WebDriver driver){
         this.driver = driver;
     }
 
     public void productAddtoCart() throws InterruptedException {
-        Thread.sleep(50000);
+        Thread.sleep(15000);
         driver.findElement(FirstMenuItem).click();
-        Thread.sleep(40000);
+        Thread.sleep(15000);
         driver.findElement(product).click();
-        Thread.sleep(40000);
+        Thread.sleep(15000);
         driver.findElement(addToCart).click();
         Thread.sleep(2000);
         driver.findElement(cart).click();
-        Thread.sleep(30000);
+        Thread.sleep(3000);
         driver.findElement(checkout).click();
     }
 
     public void checkoutMethod() throws InterruptedException {
-        Thread.sleep(50000);
+        Thread.sleep(15000);
         driver.findElement(paymentMethodCashOnDelivary).click();
         Thread.sleep(10000);
         driver.findElement(placeOrder).click();
-        Thread.sleep(40000);
+        Thread.sleep(15000);
        // String expectedResult= "Your Order has been successfully processed.";
        // String actualResult= driver.findElement(successfulOrderMessage).getText();
        // Assert.assertEquals(expectedResult,actualResult);
@@ -67,5 +68,8 @@ public class CheckoutPage {
         Thread.sleep(40000);
         driver.findElement(popUPFBButton).click();
     }
-
+    public void gmailPopUpCheckout() throws InterruptedException {
+        Thread.sleep(40000);
+        driver.findElement(popUpGmailButton).click();
+    }
 }

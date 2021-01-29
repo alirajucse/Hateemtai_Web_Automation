@@ -28,7 +28,7 @@ public void invalidLoginCredentialsVerify() throws InterruptedException {
 public void loginWithGmail() throws InterruptedException {
     loginPage.clickLoginText();
    loginPage.clickGmailLoginButton();
-   loginPage.credentialsInput("alirajujnu1@gmail.com","pP@01921666");
+   loginPage.gmailCredentials("alirajujnu1@gmail.com","pP@01921666");
    loginPage.loginverify();
 }
 @Test
@@ -48,7 +48,7 @@ public void fbLoginTest() throws InterruptedException {
 public void popUPGmailLoginTest() throws InterruptedException {
     checkoutPage.productAddtoCart();
     loginPage.popUPGmailLogin();
-    loginPage.credentialsInput("alirajujnu1@gmail.com","pP@01921666");
+    loginPage.gmailCredentials("alirajujnu1@gmail.com","pP@01921666");
     loginPage.loginverify();
 }
 @Test

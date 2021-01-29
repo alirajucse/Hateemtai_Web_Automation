@@ -11,4 +11,11 @@ public class signUPTest extends BaseTest{
         signupPage.signUPFinalProcessMethod();
         loginPage.loginverify();
     }
+    @Test
+    public void popUPSignupTest() throws InterruptedException {
+        checkoutPage.productAddtoCart();
+        signupPage.clickPopUPSignupButton();
+        signupPage.popUPSignUPCredentials("Raju","raju93@ht.com","01747359585","pP@01921666");
+        signupPage.successfulSignUPVerify();
+    }
 }

@@ -32,5 +32,8 @@ public class CheckoutTest extends BaseTest{
         loginPage.popUpFbLogin();
         checkoutPage.checkoutMethod();
     }
+   public void popUpGmailCheckoutTest() throws InterruptedException {
+        checkoutPage.productAddtoCart();
 
+   }
 }
