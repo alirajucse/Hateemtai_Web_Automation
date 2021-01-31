@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
     private WebDriver driver;
     private By loginlink = By.xpath("//a[normalize-space()='LOG IN']");
-    private By usernameField = By.name("login_email");
-    private By passwordField = By.name("login_password");
-    private By loginButton = By.xpath("//*[@id='signuptab-pane-second']/form/div/div[3]/button");
+    private By usernameField = By.xpath("//input[@placeholder='Email*']");
+    private By passwordField = By.xpath("//input[@placeholder='Password*']");
+    private By loginButton = By.xpath("//div[@aria-labelledby='signuptab-tab-second']//form//div//div//button[@type='submit']");
     private By loginVerify = By.id("ddlProduct");
     private By actualResult = By.partialLinkText("MY ACCOUNT");
     private By gmailButton = By.xpath("//body/div[@id='root']/div/div/div/div[@id='signuptab']/div[@id='RegTabContent']/div[@id='signuptab-pane-second']/form/div/div/p/button[1]");
@@ -38,18 +38,13 @@ public class LoginPage {
         driver.findElement(loginlink).click();
     }
 
-    public void setUsername(String username) {
-
+    public void LoginCredentialInput(String username,String password) throws InterruptedException {
+        Thread.sleep(15000);
         driver.findElement(usernameField).sendKeys(username);
-    }
-
-    public void setPassword(String password) {
-
         driver.findElement(passwordField).sendKeys(password);
     }
 
     public void clickLoginButton() {
-
         driver.findElement(loginButton).click();
     }
 
@@ -133,10 +128,6 @@ public class LoginPage {
         driver.findElement(popupLoginPasswordField).sendKeys(popUpPwrd);
         Thread.sleep(3000);
         driver.findElement(popUpLoginSubmitButton).click();
-    }
-    public SecureAreaPage clickLoginButton1(){
-        driver.findElement(loginButton).click();
-        return new SecureAreaPage(driver);
     }
 
     public void ClickfacebookLoginButton() throws InterruptedException {

@@ -9,18 +9,15 @@ public void testSuccessfulLogin() throws InterruptedException {
     Thread.sleep(40000);
     loginPage.clickLoginText();
     Thread.sleep(50000);
-    loginPage.setUsername("raju82@ht.com");
-    loginPage.setPassword("pP@01921666");
+    loginPage.LoginCredentialInput("raju82@ht.com","pP@01921666");
     loginPage.clickLoginButton();
     Thread.sleep(50000);
     loginPage.loginverify();
 }
-
 @Test
 public void invalidLoginCredentialsVerify() throws InterruptedException {
     loginPage.clickLoginText();
-    loginPage.setUsername("raju82@ht.com");
-    loginPage.setPassword("pP@019");
+    loginPage.LoginCredentialInput("taju82@ht.com","pP@0192");
     loginPage.clickLoginButton();
     loginPage.tryWithInvalidCredentials();
 }

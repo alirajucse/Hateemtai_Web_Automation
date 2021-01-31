@@ -1,9 +1,6 @@
 package Base;
 
-import Pages.CheckoutPage;
-import Pages.HomePage;
-import Pages.LoginPage;
-import Pages.SignupPage;
+import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
@@ -16,6 +13,7 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected SignupPage signupPage;
     protected CheckoutPage checkoutPage;
+    protected CategoryPage categoryPage;
     public String baseUrl = "https://www.hateemtai.com/";
 
 @BeforeClass
@@ -29,6 +27,8 @@ public class BaseTest {
         loginPage=new LoginPage(driver);
         signupPage=new SignupPage(driver);
         checkoutPage=new CheckoutPage(driver);
+        categoryPage=new CategoryPage(driver);
+
         //2 - Fullscreen mode
         //driver.manage().window().fullscreen();
 
