@@ -14,6 +14,7 @@ public class BaseTest {
     protected SignupPage signupPage;
     protected CheckoutPage checkoutPage;
     protected CategoryPage categoryPage;
+    protected FBMessengerPage fbMessengerPage;
     public String baseUrl = "https://www.hateemtai.com/";
 
 @BeforeClass
@@ -28,7 +29,7 @@ public class BaseTest {
         signupPage=new SignupPage(driver);
         checkoutPage=new CheckoutPage(driver);
         categoryPage=new CategoryPage(driver);
-
+        fbMessengerPage=new FBMessengerPage(driver);
         //2 - Fullscreen mode
         //driver.manage().window().fullscreen();
 
