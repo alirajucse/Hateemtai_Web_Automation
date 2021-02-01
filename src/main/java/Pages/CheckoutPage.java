@@ -24,6 +24,7 @@ public class CheckoutPage {
     private By product= By.xpath("//body//div[@id='root']//div[@id='store']//div//div//div//div[1]//div[1]//div[1]//div[1]//div[1]//a[1]//div[1]//div[1]");
     private By addToCart= By.xpath("//button[normalize-space()='add to cart']");
     private By cartIcon= By.xpath("//img[@src='./img/cartIcon.png']");
+    private By quickViewCheckoutButtton= By.xpath("//a[normalize-space()='Checkout']");
     private By checkout= By.xpath("//html//body//div//div//header//div//div//div//div//div//div//div//ul//div//div//div//div//div//button");
     private By paymentMethodCashOnDelivary= By.xpath("//label[normalize-space()='Cash on Delivery']");
     private By placeOrder= By.xpath("//body//div[@id='root']//form//div//button[1]");
@@ -74,7 +75,7 @@ public class CheckoutPage {
         Thread.sleep(15000);
         driver.findElement(cartIcon).click();
         Thread.sleep(7000);
-        driver.findElement(checkout).click();
+        driver.findElement(quickViewCheckoutButtton).click();
     }
 
     public void checkoutMethod() throws InterruptedException {
