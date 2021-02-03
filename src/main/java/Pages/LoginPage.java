@@ -49,13 +49,13 @@ public class LoginPage {
             driver.findElement(usernameField).sendKeys(username);
         }
         else{
-            System.out.println("Sign up User name element not found ");
+            System.out.println("Login User name element not found ");
         }
         if(driver.findElement(passwordField).isDisplayed()){
             driver.findElement(passwordField).sendKeys(password);
         }
         else {
-            System.out.println("Sign up password element not found");
+            System.out.println("Login password element not found");
         }
     }
 
@@ -65,7 +65,7 @@ public class LoginPage {
             driver.findElement(loginButton).click();
         }
         else {
-            System.out.println("Sign up login button element not found");
+            System.out.println("login button element not found");
         }
     }
 
