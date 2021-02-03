@@ -25,27 +25,30 @@ public class SignupPage {
     private By popUPAgreeCheckbox= By.xpath("//label[@for='terms']//span");
     private By popUPSignUPButton= By.xpath("//div[@role='dialog']//div[7]//button[1]");
     private By signUPVerify = By.id("ddlProduct");
+    private By existingUserSignUpCheck= By.xpath("//div[@role='tabpanel']//div[2]//div[2]//div[1]//span[1]");
+
 
     public SignupPage(WebDriver driver){
+
         this.driver = driver;
     }
 
     public void signUpLinkClick() throws InterruptedException {
-        Thread.sleep(50000);
+        Thread.sleep(15000);
         driver.findElement(signuplink).click();
     }
 
     public void signUPInformationInputMethod(String username,String email,String password,String phone) throws InterruptedException {
 
-        Thread.sleep(60000);
+        Thread.sleep(20000);
         driver.findElement(usernameField).sendKeys(username);
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         driver.findElement(emailField).sendKeys(email);
-        Thread.sleep(10000);
+        Thread.sleep(4000);
         driver.findElement(passwordField).sendKeys(password);
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         driver.findElement(phonenumberField).sendKeys(phone);
-        Thread.sleep(10000);
+        Thread.sleep(3000);
     }
 
     public void signUPFinalProcessMethod() throws InterruptedException {
@@ -67,21 +70,65 @@ public class SignupPage {
 
     }
     public void clickPopUPSignupButton() throws InterruptedException {
-        Thread.sleep(10000);
-        driver.findElement(popUPSignup).click();
+        Thread.sleep(15000);
+        if(driver.findElement(popUPSignup).isDisplayed()){
+            driver.findElement(popUPSignup).click();
+        }
+        else {
+            System.out.println("Pop up sign up button element not found");
+        }
     }
     public void popUPSignUPCredentials(String usrName,String email,String phone,String passwrd) throws InterruptedException {
         Thread.sleep(5000);
-        driver.findElement(popUpUserName).sendKeys(usrName);
+        if(driver.findElement(popUpUserName).isDisplayed()){
+            driver.findElement(popUpUserName).sendKeys(usrName);
+        }
+        else{
+            System.out.println("Pop up user name input element not found");
+        }
         Thread.sleep(2000);
-        driver.findElement(popUPEmail).sendKeys(email);
+        if(driver.findElement(popUPEmail).isDisplayed()){
+            driver.findElement(popUPEmail).sendKeys(email);
+        }
+        else{
+            System.out.println("Pop up email input element not found");
+        }
         Thread.sleep(2000);
-        driver.findElement(popUPPhoneNUmber).sendKeys(phone);
+        if(driver.findElement(popUPPhoneNUmber).isDisplayed()){
+            driver.findElement(popUPPhoneNUmber).sendKeys(phone);
+        }
+        else{
+            System.out.println("Pop up phone number element not found");
+        }
         Thread.sleep(2000);
-        driver.findElement(popUPPassword).sendKeys(passwrd);
+        if(driver.findElement(popUPPassword).isDisplayed()){
+            driver.findElement(popUPPassword).sendKeys(passwrd);
+        }
+        else{
+            System.out.println("Pop up password element not found");
+        }
         Thread.sleep(3000);
-        driver.findElement(popUPAgreeCheckbox).click();
+        if(driver.findElement(popUPAgreeCheckbox).isDisplayed()){
+            driver.findElement(popUPAgreeCheckbox).click();
+        }
+        else{
+            System.out.println("Pop up agree checkbox element not found");
+        }
         Thread.sleep(4000);
-        driver.findElement(popUPSignUPButton).click();
+        if(driver.findElement(popUPSignUPButton).isDisplayed()){
+            driver.findElement(popUPSignUPButton).click();
+        }
+        else{
+            System.out.println("Pop up sign up button not found");
+        }
+    }
+    public void existingUserSignUpCheck() throws InterruptedException {
+        Thread.sleep(15000);
+        if(driver.findElement(existingUserSignUpCheck).isDisplayed()){
+            System.out.println("Test case passed");
+        }
+        else {
+            System.out.println("Test case failed");
+        }
     }
 }

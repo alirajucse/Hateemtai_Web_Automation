@@ -18,4 +18,11 @@ public class signUPTest extends BaseTest{
         signupPage.popUPSignUPCredentials("Raju","raju93@ht.com","01747359585","pP@01921666");
         signupPage.successfulSignUPVerify();
     }
+    @Test
+    public void existingUserSignUpTest() throws InterruptedException {
+        signupPage.signUpLinkClick();
+        signupPage.signUPInformationInputMethod("Raju","raju82@ht.com","pP@01921666","01747359873");
+        signupPage.signUPFinalProcessMethod();
+        signupPage.existingUserSignUpCheck();
+    }
 }

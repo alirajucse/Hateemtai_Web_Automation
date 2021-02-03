@@ -6,15 +6,29 @@ import org.openqa.selenium.WebDriver;
 
 public class FBMessengerPage {
     private WebDriver driver;
-    private By chatAsGuest= By.xpath("//html//body");
+    private By iframeElementI = By.name("f4aaa88c83ff6c");
+    private By chatAsGuest= By.xpath("//body");
     private By chatText= By.xpath("//body");
+
     public FBMessengerPage(WebDriver driver){
         this.driver=driver;
     }
 
-    public void chatWithoutLogin(String msg) throws InterruptedException {
+    public void chatWithoutLogin() throws InterruptedException {
         Thread.sleep(15000);
-    driver.findElement(chatAsGuest).click();
-    driver.findElement(chatText).sendKeys(msg);
+        int size = driver.findElements(By.tagName("iframe")).size();
+        System.out.println("Total Frames --" + size);
+
+        driver.switchTo().frame(0); //switching the frame by name
+       // driver.switchTo().frame(1);
+        driver.findElement(chatAsGuest).click();
+        System.out.println("********We are switch to the iframe*******");
+       // driver.findElement(By.xpath("html/body/a/img")).click();
+        //Clicks the iframe
+
+      //  System.out.println("*********We are done***************");
+   // driver.findElement(chatAsGuest).click();
+        // driver.findElement(chatText).sendKeys(msg);
+
     }
 }

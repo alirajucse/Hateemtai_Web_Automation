@@ -44,7 +44,7 @@ public class CheckoutTest extends BaseTest{
    public void popUPSignUPCheckoutTest() throws InterruptedException {
         checkoutPage.productAddtoCart();
         signupPage.clickPopUPSignupButton();
-        signupPage.popUPSignUPCredentials("Raju","raju95@ht.com","01747358547","pP@01921666");
+        signupPage.popUPSignUPCredentials("Raju","raju99@ht.com","01747358547","pP@01921666");
         checkoutPage.popUPSignUPCheckoutShippingAddress("Raju","Pilkhana,Dhaka","01747359862","1205");
         checkoutPage.checkoutMethod();
    }

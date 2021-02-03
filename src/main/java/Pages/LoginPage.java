@@ -35,17 +35,38 @@ public class LoginPage {
 
     public void clickLoginText() throws InterruptedException {
         Thread.sleep(10000);
-        driver.findElement(loginlink).click();
+        if(driver.findElement(loginlink).isDisplayed()){
+            driver.findElement(loginlink).click();
+        }
+        else {
+            System.out.println("Login link element not found");
+        }
     }
 
     public void LoginCredentialInput(String username,String password) throws InterruptedException {
         Thread.sleep(15000);
-        driver.findElement(usernameField).sendKeys(username);
-        driver.findElement(passwordField).sendKeys(password);
+        if(driver.findElement(usernameField).isDisplayed()){
+            driver.findElement(usernameField).sendKeys(username);
+        }
+        else{
+            System.out.println("Sign up User name element not found ");
+        }
+        if(driver.findElement(passwordField).isDisplayed()){
+            driver.findElement(passwordField).sendKeys(password);
+        }
+        else {
+            System.out.println("Sign up password element not found");
+        }
     }
 
-    public void clickLoginButton() {
-        driver.findElement(loginButton).click();
+    public void clickLoginButton() throws InterruptedException {
+        Thread.sleep(2000);
+        if(driver.findElement(loginButton).isDisplayed()){
+            driver.findElement(loginButton).click();
+        }
+        else {
+            System.out.println("Sign up login button element not found");
+        }
     }
 
     public void loginverify() throws InterruptedException {
@@ -163,5 +184,6 @@ public class LoginPage {
         Thread.sleep(100000);
         driver.findElement(popUPFBButton).click();
         }
+
     }
 

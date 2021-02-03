@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 
 public class CheckoutPage {
 
@@ -34,6 +33,7 @@ public class CheckoutPage {
     private By shippngAddressName= By.xpath("//input[@placeholder='Enter Your Full Name']");
     private By shippngAddressLine1= By.xpath("//input[@placeholder='Area, Street address, P.O. box, Company, C/O']");
     private By shippngAddressState= By.xpath("//body/div/div/div/div/div/div/div/form/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]");
+    //private By shippingAddressStateValue= By.linkText("Dhaka");
     private By shippngAddressCity= By.xpath("//body/div/div/div/div/div/div/div/form/div/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]");
     private By shippingAddressPhoneNumber= By.xpath("//input[@placeholder='Phone Number']");
     private By shippingAddressZipcode= By.xpath("//input[@placeholder='ZIP Code/Postal Code']");
@@ -41,6 +41,7 @@ public class CheckoutPage {
     private By quickView= By.xpath("//body//div//div//div//div//div//div//div//div//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//button[1]");
     private By quickViewAddToCartButton= By.xpath("//div[@role='document']//div//div//div//div//div//div//div//button[contains(text(),'add to cart')]");
     private By quickViewPopUpCloseButton= By.xpath("//span[@aria-hidden='true']");
+    private By shippingAddressStateValue  = By.xpath("//*[text()=’Dhaka’]");
 
     public CheckoutPage(WebDriver driver){
         this.driver = driver;
@@ -107,14 +108,53 @@ public class CheckoutPage {
     }
     public void popUPSignUPCheckoutShippingAddress(String name,String address,String phone,String zipcode) throws InterruptedException {
         Thread.sleep(15000);
-        driver.findElement(shippngAddressName).sendKeys(name);
-        driver.findElement(shippngAddressLine1).sendKeys(address);
-        Select stateDropdown= new Select(driver.findElement(shippngAddressState));
-        stateDropdown.selectByVisibleText("Dhaka");
-        Select cityDropdown= new Select(driver.findElement(shippngAddressCity));
-        cityDropdown.selectByVisibleText("Dhaka-South");
-        driver.findElement(shippingAddressPhoneNumber).sendKeys(phone);
-        driver.findElement(shippingAddressZipcode).sendKeys(zipcode);
-        driver.findElement(shippingAddressSave).click();
+        if(driver.findElement(shippngAddressName).isDisplayed()) {
+            driver.findElement(shippngAddressName).sendKeys(name);
+        }
+        else{
+            System.out.println("Shipping address name element not found");
+        }
+        Thread.sleep(5000);
+        if(driver.findElement(shippngAddressLine1).isDisplayed()) {
+            driver.findElement(shippngAddressLine1).sendKeys(address);
+        }
+        else{
+            System.out.println("Shipping address address line 1 element not found");
+        }
+        Thread.sleep(4000);
+        if(driver.findElement(shippngAddressState).isDisplayed()) {
+            driver.findElement(shippngAddressState).click();
+        }
+        else{
+            System.out.println("Shipping address state element not found");
+        }
+        Thread.sleep(7000);
+        if(driver.findElement(By.tagName("Dhaka")).isDisplayed()){
+            driver.findElement(shippingAddressStateValue).click();
+        }
+        else{
+            System.out.println("Shipping address state name element not found");
+        }
+        Thread.sleep(5000);
+        if(driver.findElement(shippingAddressPhoneNumber).isDisplayed()) {
+            driver.findElement(shippingAddressPhoneNumber).sendKeys(name);
+        }
+        else{
+            System.out.println("Shipping address phone number element not found");
+        }
+        Thread.sleep(5000);
+        if(driver.findElement(shippingAddressZipcode).isDisplayed()) {
+            driver.findElement(shippingAddressZipcode).sendKeys(zipcode);
+        }
+        else{
+            System.out.println("Shipping address zipcode element not found");
+        }
+        Thread.sleep(3000);
+        if(driver.findElement(shippingAddressSave).isDisplayed()) {
+            driver.findElement(shippingAddressZipcode).click();
+        }
+        else{
+            System.out.println("Shipping address save element not found");
+        }
     }
 }
