@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Login"
+           tests="7"
+           failures="6"
+           errors="0"
+           skipped="0"
+           time="390.988">
+  <properties />
+            <testcase name="loginWithGmail" time="10.016" classname="Tests.LoginTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[normalize-space()=&apos;LOG IN&apos;]&quot;}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;RAJUCOMPUTER&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//a[normalize-space()=&apos;LOG IN&apos;]}"
+              >
+                    <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='LOG IN']"}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'RAJUCOMPUTER', ip: '192.168.0.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//a[normalize-space()='LOG IN']}
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+  Pages.LoginPage.clickLoginText(LoginPage.java:38)
+  Tests.LoginTest.loginWithGmail(LoginTest.java:26)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+  org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+  org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+  org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+  org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+  org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+  org.testng.TestRunner.privateRun(TestRunner.java:766)
+  org.testng.TestRunner.run(TestRunner.java:587)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+  org.testng.SuiteRunner.run(SuiteRunner.java:286)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+  org.testng.TestNG.runSuites(TestNG.java:1039)
+  org.testng.TestNG.run(TestNG.java:1007)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+                </failure>
+
+          </testcase>
+            <testcase name="invalidLoginCredentialsVerify" time="10.163" classname="Tests.LoginTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[normalize-space()=&apos;LOG IN&apos;]&quot;}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;RAJUCOMPUTER&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//a[normalize-space()=&apos;LOG IN&apos;]}"
+              >
+                    <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='LOG IN']"}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'RAJUCOMPUTER', ip: '192.168.0.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//a[normalize-space()='LOG IN']}
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+  Pages.LoginPage.clickLoginText(LoginPage.java:38)
+  Tests.LoginTest.invalidLoginCredentialsVerify(LoginTest.java:19)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+  org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+  org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+  org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+  org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+  org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+  org.testng.TestRunner.privateRun(TestRunner.java:766)
+  org.testng.TestRunner.run(TestRunner.java:587)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+  org.testng.SuiteRunner.run(SuiteRunner.java:286)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+  org.testng.TestNG.runSuites(TestNG.java:1039)
+  org.testng.TestNG.run(TestNG.java:1007)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+                </failure>
+
+          </testcase>
+            <testcase name="popUPFacebookLoginTest" time="54.839" classname="Tests.LoginTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//html//body//div//div//header//div//div//div//div//div//div//div//ul//div//div//div//div//div//button&quot;}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;RAJUCOMPUTER&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//html//body//div//div//header//div//div//div//div//div//div//div//ul//div//div//div//div//div//button}"
+              >
+                    <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//html//body//div//div//header//div//div//div//div//div//div//div//ul//div//div//div//div//div//button"}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'RAJUCOMPUTER', ip: '192.168.0.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//html//body//div//div//header//div//div//div//div//div//div//div//ul//div//div//div//div//div//button}
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+  Pages.CheckoutPage.productAddtoCart(CheckoutPage.java:60)
+  Tests.LoginTest.popUPFacebookLoginTest(LoginTest.java:53)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+  org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+  org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+  org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+  org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+  org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+  org.testng.TestRunner.privateRun(TestRunner.java:766)
+  org.testng.TestRunner.run(TestRunner.java:587)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+  org.testng.SuiteRunner.run(SuiteRunner.java:286)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+  org.testng.TestNG.runSuites(TestNG.java:1039)
+  org.testng.TestNG.run(TestNG.java:1007)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+                </failure>
+
+          </testcase>
+            <testcase name="testSuccessfulLogin" time="50.044" classname="Tests.LoginTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[normalize-space()=&apos;LOG IN&apos;]&quot;}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;RAJUCOMPUTER&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//a[normalize-space()=&apos;LOG IN&apos;]}"
+              >
+                    <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='LOG IN']"}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'RAJUCOMPUTER', ip: '192.168.0.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//a[normalize-space()='LOG IN']}
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+  Pages.LoginPage.clickLoginText(LoginPage.java:38)
+  Tests.LoginTest.testSuccessfulLogin(LoginTest.java:10)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+  org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+  org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+  org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+  org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+  org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+  org.testng.TestRunner.privateRun(TestRunner.java:766)
+  org.testng.TestRunner.run(TestRunner.java:587)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+  org.testng.SuiteRunner.run(SuiteRunner.java:286)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+  org.testng.TestNG.runSuites(TestNG.java:1039)
+  org.testng.TestNG.run(TestNG.java:1007)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+                </failure>
+
+          </testcase>
+            <testcase name="popUPGmailLoginTest" time="15.026" classname="Tests.LoginTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//body/div[@id=&apos;root&apos;]/div/div/div/div/div/div[@id=&apos;responsive-nav&apos;]/ul[@id=&apos;dropdown-menu&apos;]/li[1]/a[1]&quot;}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;RAJUCOMPUTER&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//body/div[@id=&apos;root&apos;]/div/div/div/div/div/div[@id=&apos;responsive-nav&apos;]/ul[@id=&apos;dropdown-menu&apos;]/li[1]/a[1]}"
+              >
+                    <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//body/div[@id='root']/div/div/div/div/div/div[@id='responsive-nav']/ul[@id='dropdown-menu']/li[1]/a[1]"}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'RAJUCOMPUTER', ip: '192.168.0.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//body/div[@id='root']/div/div/div/div/div/div[@id='responsive-nav']/ul[@id='dropdown-menu']/li[1]/a[1]}
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+  Pages.CheckoutPage.productAddtoCart(CheckoutPage.java:52)
+  Tests.LoginTest.popUPGmailLoginTest(LoginTest.java:46)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+  org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+  org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+  org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+  org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+  org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+  org.testng.TestRunner.privateRun(TestRunner.java:766)
+  org.testng.TestRunner.run(TestRunner.java:587)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+  org.testng.SuiteRunner.run(SuiteRunner.java:286)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+  org.testng.TestNG.runSuites(TestNG.java:1039)
+  org.testng.TestNG.run(TestNG.java:1007)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+                </failure>
+
+          </testcase>
+            <testcase name="popUpLoginTest" time="15.022" classname="Tests.LoginTest">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//body/div[@id=&apos;root&apos;]/div/div/div/div/div/div[@id=&apos;responsive-nav&apos;]/ul[@id=&apos;dropdown-menu&apos;]/li[1]/a[1]&quot;}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;RAJUCOMPUTER&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//body/div[@id=&apos;root&apos;]/div/div/div/div/div/div[@id=&apos;responsive-nav&apos;]/ul[@id=&apos;dropdown-menu&apos;]/li[1]/a[1]}"
+              >
+                    <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//body/div[@id='root']/div/div/div/div/div/div[@id='responsive-nav']/ul[@id='dropdown-menu']/li[1]/a[1]"}
+  (Session info: MicrosoftEdge=88.0.705.63)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'RAJUCOMPUTER', ip: '192.168.0.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 88.0.705.63, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:4355}, msedge: {msedgedriverVersion: 88.0.705.50 (046db035bf4545..., userDataDir: C:\Users\Raju\AppData\Local...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a732a0dc2d33de2aada6006884d330a8
+*** Element info: {Using=xpath, value=//body/div[@id='root']/div/div/div/div/div/div[@id='responsive-nav']/ul[@id='dropdown-menu']/li[1]/a[1]}
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+  java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+  org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+  org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+  Pages.CheckoutPage.productAddtoCart(CheckoutPage.java:52)
+  Tests.LoginTest.popUpLoginTest(LoginTest.java:33)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.base/java.lang.reflect.Method.invoke(Method.java:564)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+  org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+  org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+  org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+  org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+  org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+  java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+  org.testng.TestRunner.privateRun(TestRunner.java:766)
+  org.testng.TestRunner.run(TestRunner.java:587)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+  org.testng.SuiteRunner.run(SuiteRunner.java:286)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+  org.testng.TestNG.runSuites(TestNG.java:1039)
+  org.testng.TestNG.run(TestNG.java:1007)
+  com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+  com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+                </failure>
+
+          </testcase>
+  
+  
+            <testcase name="fbLoginTest" time="235.878" classname="Tests.LoginTest" />
+      
+</testsuite>

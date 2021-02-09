@@ -1,15 +1,21 @@
-package Base;
-
+package Tests;
+import Base.TestBase;
+import Pages.CategoryPage;
+import Pages.HomePage;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 
-public class CategoryTest extends BaseTest{
+public class CategoryTest extends TestBase{
+    private CategoryPage categoryPage;
+    private HomePage homePage;
+
 
     @Test
     public void groceriesCategoryTest() throws InterruptedException {
-        categoryPage.clickGroceriesCategory();
+      categoryPage.clickGroceriesCategory();
     }
+
     @Test
     public void mobileTabletCategoryProductTest() throws InterruptedException {
         categoryPage.clickMobileTabletCategory();

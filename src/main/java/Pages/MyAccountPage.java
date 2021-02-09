@@ -10,6 +10,7 @@ public class MyAccountPage {
     private By myOrder= By.xpath("//a[normalize-space()='My Orders']");
     private By corporateSale= By.xpath("//a[normalize-space()='Corporate Sale']");
     private By corporateSalePriceRequest= By.xpath("//a[normalize-space()='Be a Corporate Client']");
+    private By orderAmount= By.xpath("//span[normalize-space()='430.00']");
 
     public MyAccountPage(WebDriver driver){
         this.driver= driver;
@@ -29,6 +30,9 @@ public class MyAccountPage {
         Thread.sleep(5000);
         driver.findElement(myOrder).click();
         Thread.sleep(3000);
+        String amount=driver.findElement(orderAmount).getText();
+        //float orderAmountVerify=Float.parseFloat(amount);
+        System.out.println(amount);
     }
     public void corporateSaleSection() throws InterruptedException {
         Thread.sleep(5000);

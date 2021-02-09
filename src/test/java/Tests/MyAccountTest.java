@@ -1,8 +1,15 @@
-package Base;
+package Tests;
 
+import Base.TestBase;
+import Pages.LoginPage;
+import Pages.MyAccountPage;
 import org.testng.annotations.Test;
 
-public class MyAccountTest extends BaseTest{
+public class MyAccountTest extends TestBase{
+
+    private LoginPage loginPage;
+    private MyAccountPage myAccountPage;
+
     @Test
     public void myAccountHomePageTest() throws InterruptedException {
         loginPage.clickLoginText();

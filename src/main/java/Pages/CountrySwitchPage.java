@@ -17,7 +17,6 @@ public class CountrySwitchPage {
     private By saveButton= By.xpath("//input[@value='Save']");
 
     public CountrySwitchPage(WebDriver driver){
-
         this.driver=driver;
     }
 

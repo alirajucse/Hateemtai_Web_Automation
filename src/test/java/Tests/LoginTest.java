@@ -1,8 +1,13 @@
-package Base;
+package Tests;
 
+import Base.TestBase;
+import Pages.LoginPage;
+import Pages.CheckoutPage;
 import org.testng.annotations.Test;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends TestBase {
+    private LoginPage loginPage;
+    private CheckoutPage checkoutPage;
 
 @Test
 public void testSuccessfulLogin() throws InterruptedException {

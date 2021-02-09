@@ -33,6 +33,7 @@ public class CategoryPage {
     private By moreCategories= By.xpath("//a[normalize-space()='More Categories']");
 
     public CategoryPage(WebDriver driver) {
+
         this.driver = driver;
     }
 

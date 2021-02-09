@@ -1,10 +1,16 @@
-package Base;
-
+package Tests;
+import Base.TestBase;
+import Pages.CheckoutPage;
+import Pages.LoginPage;
+import Pages.SignupPage;
 import org.testng.annotations.Test;
 
-public class CheckoutTest extends BaseTest{
+public class CheckoutTest extends TestBase{
+    private LoginPage loginPage;
+    private CheckoutPage checkoutPage;
+    private SignupPage signupPage;
 
-    @Test
+    @Test(groups = { "smoke" })
     public void checkOutTestWithExistingUser() throws InterruptedException {
         loginPage.clickLoginText();
         loginPage.credentialsInput("raju82@ht.com","pP@01921666");
@@ -44,7 +50,7 @@ public class CheckoutTest extends BaseTest{
    public void popUPSignUPCheckoutTest() throws InterruptedException {
         checkoutPage.productAddtoCart();
         signupPage.clickPopUPSignupButton();
-        signupPage.popUPSignUPCredentials("Raju","raju99@ht.com","01747358547","pP@01921666");
+        signupPage.popUPSignUPCredentials("Raju","raju102@ht.com","01747358547","pP@01921666");
         checkoutPage.popUPSignUPCheckoutShippingAddress("Raju","Pilkhana,Dhaka","01747359862","1205");
         checkoutPage.checkoutMethod();
    }
