@@ -97,5 +97,4 @@ public void popUPFacebookLoginTest() throws InterruptedException {
     loginPage.loginverify();
     loginPage.logout();
 }
-
 }
