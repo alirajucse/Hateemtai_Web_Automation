@@ -3,14 +3,24 @@ import Base.TestBase;
 import Pages.CheckoutPage;
 import Pages.LoginPage;
 import Pages.SignupPage;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CheckoutTest extends TestBase{
+    private WebDriver driver;
     private LoginPage loginPage;
     private CheckoutPage checkoutPage;
     private SignupPage signupPage;
 
-    @Test(groups = { "smoke" })
+    @BeforeClass
+    public void setUp() {
+        driver = getDriver();
+        loginPage=new LoginPage(driver);
+        checkoutPage=new CheckoutPage(driver);
+
+    }
+
     public void checkOutTestWithExistingUser() throws InterruptedException {
         loginPage.clickLoginText();
         loginPage.credentialsInput("raju82@ht.com","pP@01921666");
@@ -36,7 +46,7 @@ public class CheckoutTest extends TestBase{
     public void popUPFBCheckoutTest() throws InterruptedException {
         checkoutPage.productAddtoCart();
         checkoutPage.fbPopUpCheckout();
-        loginPage.popUpFbLogin();
+        loginPage.popUpFbLogin("alirajujnubd@gmail.com","pP@01921666");
         checkoutPage.checkoutMethod();
     }
     @Test

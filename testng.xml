@@ -7,9 +7,14 @@
     <parameter name="browserType" value="edge" />
     <parameter name="appURL" value="https://www.hateemtai.com/" />
 
-    <test name="Country Switch Tests">
+    <test name="Login Tests">
+        <groups>
+            <run>
+                <include name = "Login" />
+            </run>
+        </groups>
         <classes>
-            <class name="Tests.CountrySwitchTest" />
+            <class name="Tests.LoginTest" />
         </classes>
     </test>
 </suite>

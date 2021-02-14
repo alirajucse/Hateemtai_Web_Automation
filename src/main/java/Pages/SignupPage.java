@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class SignupPage {
 
     private WebDriver driver;
-    private By signuplink=By.xpath("//a[contains(text(),'SIGN UP')]");
+    private By signuplink=By.xpath("//header//li[3]//a[1]");
     private By usernameField = By.xpath("//body/div/div/div/div/div/div/div[1]/form[1]/div[1]/div[1]/div[1]/input[1]");
     private By emailField = By.xpath("//div[@id='signuptab-pane-first']//div[2]//div[2]//div[1]//input[1]");
     private By passwordField = By.xpath("//body//div//div//div//div//div//div//div[1]//div[1]//div[1]//div[2]//div[1]//input[1]");

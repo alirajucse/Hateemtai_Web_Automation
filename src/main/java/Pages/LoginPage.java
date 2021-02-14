@@ -9,7 +9,7 @@ public class LoginPage {
     private By usernameField = By.xpath("//input[@placeholder='Email*']");
     private By passwordField = By.xpath("//input[@placeholder='Password*']");
     private By loginButton = By.xpath("//div[@aria-labelledby='signuptab-tab-second']//form//div//div//button[@type='submit']");
-    private By loginVerify = By.id("ddlProduct");
+    private By loginVerify = By.xpath("//a[normalize-space()='MY ACCOUNT']");
     private By actualResult = By.partialLinkText("MY ACCOUNT");
     private By gmailButton = By.xpath("//body/div[@id='root']/div/div/div/div[@id='signuptab']/div[@id='RegTabContent']/div[@id='signuptab-pane-second']/form/div/div/p/button[1]");
     private By gmailEmailField= By.xpath("//body/div/div/div/div/div/div/div/div/div/div/div/form/span/section/div/div/div/div/div/div/div/input[1]");
@@ -27,9 +27,16 @@ public class LoginPage {
     private By fbPasswordField = By.xpath("//input[@name='pass']");
     private By fbLoginConfirmButton = By.xpath("//input[@name='login']");
     private By popUpGmailButton = By.xpath("//body/div[@role='dialog']/div[@role='dialog']/div/div[@role='document']/div/div/div/div/p/button[1]");
-    private By popUPFBButton = By.xpath("//body/div/div/div/div/div/div/div/div/p/span/button[1]");
+    private By popUPFBButton = By.xpath("//body/div[@role='dialog']/div[@role='dialog']/div/div[@role='document']/div/div/div/div/p/span/button[1]");
+    private By loginProfileButton= By.id("ddlProduct");
+    private By logoutButton= By.xpath("//a[normalize-space()='LOG OUT']");
+    private By popUPFBEmailField= By.id("email");
+    private By popUPFBPassField= By.id("pass");
+    private By popUPFBSigninButton= By.xpath("//input[@name='login']");
+
 
     public LoginPage(WebDriver driver) {
+
         this.driver = driver;
     }
 
@@ -42,6 +49,7 @@ public class LoginPage {
             System.out.println("Login link element not found");
         }
     }
+
     public void LoginCredentialInput(String username,String password) throws InterruptedException {
         Thread.sleep(15000);
         driver.findElement(usernameField).sendKeys(username);
@@ -61,13 +69,9 @@ public class LoginPage {
 
     public void loginverify() throws InterruptedException {
         Thread.sleep(40000);
-        driver.findElement(loginVerify).click();
-        Thread.sleep(30000);
-        Boolean successfulloginVerify = driver.findElement(actualResult).isDisplayed();
-        if (successfulloginVerify) {
-            System.out.println("Log in successful");
-        } else {
-            System.out.println("Log in failed");
+        boolean loginVerify=driver.findElement(loginProfileButton).isDisplayed();
+        if(loginVerify){
+            System.out.println("Login successful");
         }
     }
 
@@ -143,8 +147,8 @@ public class LoginPage {
         driver.findElement(fbLoginButton).click();
         Thread.sleep(1000);
     }
-    public void fbcredentials(String fbEmail,String fbPasswrd) throws InterruptedException {
 
+    public void fbcredentials(String fbEmail,String fbPasswrd) throws InterruptedException {
         // Store the current window handle
         String winHandleBefore = driver.getWindowHandle();
 
@@ -163,13 +167,42 @@ public class LoginPage {
         Thread.sleep(100000);
         driver.switchTo().window(winHandleBefore);
         }
+
         public void popUPGmailLogin() throws InterruptedException {
            Thread.sleep(100000);
            driver.findElement(popUpGmailButton).click();
         }
-        public void popUpFbLogin() throws InterruptedException {
-        Thread.sleep(100000);
+
+        public void clickPopUPFBButton() throws InterruptedException {
+            Thread.sleep(20000);
+            driver.findElement(popUPFBButton).click();
+            Thread.sleep(20000);
+        }
+
+        public void popUpFbLogin(String fbEmail,String fbPasswrd) throws InterruptedException {
+
         driver.findElement(popUPFBButton).click();
+        Thread.sleep(20000);
+        String winHandleBefore = driver.getWindowHandle();
+        // Switch to new window opened
+            for(String winHandle : driver.getWindowHandles()){
+                driver.switchTo().window(winHandle);
+            }
+            // Perform the actions on new window
+            driver.findElement(popUPFBEmailField).sendKeys(fbEmail);
+            Thread.sleep(10000);
+            driver.findElement(popUPFBPassField).sendKeys(fbPasswrd);
+            Thread.sleep(10000);
+            driver.findElement(popUPFBSigninButton).click();
+            Thread.sleep(100000);
+            driver.switchTo().window(winHandleBefore);
+        }
+        public void logout() throws InterruptedException {
+        Thread.sleep(15000);
+        driver.findElement(loginProfileButton).click();
+        Thread.sleep(8000);
+        driver.findElement(logoutButton).click();
+        Thread.sleep(15000);
         }
 
     }

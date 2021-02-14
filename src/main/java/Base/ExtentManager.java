@@ -1,4 +1,5 @@
 package Base;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
@@ -7,8 +8,9 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import java.io.File;
 
 public class ExtentManager {
+
     private static ExtentReports extent;
-    private static String reportFileName = "Test-Automaton-Report"+".html";
+    private static String reportFileName = "Hateemtai-Automaton-Test-Report"+".html";
     private static String fileSeperator = System.getProperty("file.separator");
     private static String reportFilepath = System.getProperty("user.dir") +fileSeperator+ "TestReport";
     private static String reportFileLocation =  reportFilepath +fileSeperator+ reportFileName;
@@ -37,10 +39,11 @@ public class ExtentManager {
         extent.attachReporter(htmlReporter);
         //Set environment details
         extent.setSystemInfo("OS", "Windows");
-        extent.setSystemInfo("AUT", "QA");
+        extent.setSystemInfo("AUT", "Ali");
 
         return extent;
     }
+
 
     //Create the report path
     private static String getReportPath (String path) {

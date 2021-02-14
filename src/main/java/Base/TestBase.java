@@ -1,7 +1,8 @@
 package Base;
 
-import Pages.HomePage;
 import Pages.CountrySwitchPage;
+import Pages.HomePage;
+import Pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -13,9 +14,11 @@ import org.testng.annotations.Parameters;
 public class TestBase {
     private WebDriver driver;
     protected HomePage homePage;
+    protected LoginPage loginPage;
     protected CountrySwitchPage  countrySwitchPage;
     //private static String driverPath = "resource/geckodriver.exe";
-     private static String driverPath = "resource\\";
+    private static String driverPath = "resource\\";
+
 
     public WebDriver getDriver() {
         return driver;
@@ -68,7 +71,7 @@ public class TestBase {
 
 
     @Parameters({ "browserType", "appURL" })
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void initializeTestBaseSetup(String browserType, String appURL) {
         try {
             setDriver(browserType, appURL);
@@ -78,7 +81,8 @@ public class TestBase {
         }
     }
 
-    @AfterClass
+
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }
