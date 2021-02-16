@@ -22,7 +22,7 @@ public class LoginTest extends TestBase {
         homePage=new HomePage(driver);
     }
 
-@Test(groups = { "Login" })
+@Test(priority = 1,groups = { "Login" })
 public void testSuccessfulLogin() throws InterruptedException {
     Thread.sleep(40000);
     loginPage.clickLoginText();
@@ -35,7 +35,7 @@ public void testSuccessfulLogin() throws InterruptedException {
     loginPage.loginverify();
     loginPage.logout();
 }
-@Test(groups = { "Login" })
+@Test(priority = 3,groups = { "Login" })
 public void invalidLoginCredentialsVerify() throws InterruptedException {
     homePage.homeScreen();
     loginPage.clickLoginText();
@@ -43,7 +43,7 @@ public void invalidLoginCredentialsVerify() throws InterruptedException {
     loginPage.clickLoginButton();
     loginPage.tryWithInvalidCredentials();
 }
-@Test(groups = { "Login" })
+@Test(priority = 1,groups = { "Gmail" })
 public void loginWithGmail() throws InterruptedException {
    homePage.homeScreen();
    loginPage.clickLoginText();
@@ -54,7 +54,7 @@ public void loginWithGmail() throws InterruptedException {
    loginPage.loginverify();
    loginPage.logout();
 }
-@Test(groups = { "pop up login" })
+@Test(priority = 2,groups = { "Login" })
 public void popUpLoginTest() throws InterruptedException {
     homePage.homeScreen();
     checkoutPage.productAddtoCart();
@@ -64,7 +64,7 @@ public void popUpLoginTest() throws InterruptedException {
     loginPage.loginverify();
     loginPage.logout();
 }
-@Test(groups = { "Facebook" })
+@Test(priority = 2,groups = { "Facebook" })
 public void fbLoginTest() throws InterruptedException {
     homePage.homeScreen();
     loginPage.clickLoginText();
@@ -75,7 +75,7 @@ public void fbLoginTest() throws InterruptedException {
     loginPage.loginverify();
     loginPage.logout();
 }
-@Test(groups = { "pop up login" })
+@Test(priority = 2,groups = { "Gmail" })
 public void popUPGmailLoginTest() throws InterruptedException {
     homePage.homeScreen();
     checkoutPage.productAddtoCart();
@@ -86,7 +86,7 @@ public void popUPGmailLoginTest() throws InterruptedException {
     loginPage.loginverify();
     loginPage.logout();
 }
-@Test(groups = { "pop up login" })
+@Test(priority = 1,groups = { "Facebook" })
 public void popUPFacebookLoginTest() throws InterruptedException {
     homePage.homeScreen();
     checkoutPage.productAddtoCart();

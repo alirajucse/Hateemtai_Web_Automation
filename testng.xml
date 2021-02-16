@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Suite" verbose="1">
+    <listeners>
+        <listener class-name="Base.TestListener" />
+    </listeners>
+    <parameter name="browserType" value="edge" />
+    <parameter name="appURL" value="https://www.hateemtai.com/" />
+
+    <test name="Login Tests">
+        <groups>
+            <run>
+                <include name = "Sign up" />
+                <include name = "Login" />
+                <include name = "Facebook" />
+                <include name = "Gmail" />
+                <include name = "Checkout" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Tests.SignupTest" />
+            <class name="Tests.LoginTest" />
+            <class name="Tests.CheckoutTest" />
+        </classes>
+    </test>
+</suite>

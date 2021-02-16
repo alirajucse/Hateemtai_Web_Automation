@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class signUPTest extends TestBase {
+public class SignupTest extends TestBase {
     private WebDriver driver;
     private SignupPage signupPage;
     private LoginPage loginPage;

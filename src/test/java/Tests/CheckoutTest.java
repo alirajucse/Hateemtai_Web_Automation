@@ -20,7 +20,7 @@ public class CheckoutTest extends TestBase{
         checkoutPage=new CheckoutPage(driver);
 
     }
-
+    @Test(priority = 1,groups = { "Checkout" })
     public void checkOutTestWithExistingUser() throws InterruptedException {
         loginPage.clickLoginText();
         loginPage.credentialsInput("raju82@ht.com","pP@01921666");
@@ -28,7 +28,7 @@ public class CheckoutTest extends TestBase{
         checkoutPage.productAddtoCart();
         checkoutPage.checkoutMethod();
     }
-    @Test
+    @Test(priority = 2,groups = { "Checkout" })
     public void checkoutWithAddProductFromQuickView() throws InterruptedException {
         loginPage.clickLoginText();
         loginPage.LoginCredentialInput("raju82@ht.com","pP@01921666");
@@ -36,27 +36,27 @@ public class CheckoutTest extends TestBase{
         checkoutPage.productAddToCartFromQuickView();
         checkoutPage.checkoutMethod();
     }
-    @Test
+    @Test(priority = 3,groups = { "Checkout" })
     public void popUPCheckoutTest() throws InterruptedException {
         checkoutPage.productAddtoCart();
         loginPage.popUpLogin("raju82@ht.com","pP@01921666");
         checkoutPage.checkoutMethod();
     }
-    @Test
+    @Test(priority = 4,groups = { "Checkout" })
     public void popUPFBCheckoutTest() throws InterruptedException {
         checkoutPage.productAddtoCart();
         checkoutPage.fbPopUpCheckout();
         loginPage.popUpFbLogin("alirajujnubd@gmail.com","pP@01921666");
         checkoutPage.checkoutMethod();
     }
-    @Test
-   public void popUpGmailCheckoutTest() throws InterruptedException {
+    @Test(priority = 5,groups = { "Checkout" })
+    public void popUpGmailCheckoutTest() throws InterruptedException {
         checkoutPage.productAddtoCart();
         loginPage.popUPGmailLogin();
         loginPage.gmailCredentials("alirajujnu1@gmail.com","pP@01921666");
         checkoutPage.checkoutMethod();
    }
-   @Test
+   @Test(priority = 6,groups = { "Checkout" })
    public void popUPSignUPCheckoutTest() throws InterruptedException {
         checkoutPage.productAddtoCart();
         signupPage.clickPopUPSignupButton();
