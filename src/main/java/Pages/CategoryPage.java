@@ -57,7 +57,7 @@ public class CategoryPage {
         driver.findElement(clickCategoryMobileTablet).click();
         Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         if(driver.findElement(mobileTabletCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -72,7 +72,7 @@ public class CategoryPage {
         driver.findElement(computerAccesoriesCategory).click();
         Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         if(driver.findElement(computerAccesoriesCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -87,7 +87,7 @@ public class CategoryPage {
         driver.findElement(consumerElectronicsCategory).click();
         Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         if(driver.findElement(consumerElectronicsCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -102,7 +102,7 @@ public class CategoryPage {
         driver.findElement(entertaintmentGamingCategory).click();
         Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         if(driver.findElement(entertaintmentCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -121,7 +121,7 @@ public class CategoryPage {
        // Thread.sleep(30000);
        // robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         if(driver.findElement(healthBeautyCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -136,7 +136,7 @@ public class CategoryPage {
         driver.findElement(womenFashionCategory).click();
         Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         if(driver.findElement(womenFashionCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -151,7 +151,7 @@ public class CategoryPage {
         driver.findElement(menFashionCategory).click();
         Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         if(driver.findElement(menFashionCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -166,7 +166,7 @@ public class CategoryPage {
         driver.findElement(wholesaleTradeCategory).click();
         Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         if(driver.findElement(wholesaleCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -181,7 +181,7 @@ public class CategoryPage {
         driver.findElement(stationaryOfficeSuppliesCategory).click();
         Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         if(driver.findElement(stationaryOfficeSuppliesCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");

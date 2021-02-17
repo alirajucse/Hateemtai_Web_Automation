@@ -10,31 +10,17 @@ public class HomePageTest extends TestBase {
     private HomePage homePage;
     private WebDriver driver;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void setUp() {
         this.driver=driver;
         homePage=new HomePage(driver);
     }
 
-    @Test
+    @Test(priority = 1,groups = { "Home" })
     public void verifyHomePage() {
         System.out.println("Home page test...");
         homePage=new HomePage(driver);
         Assert.assertTrue(homePage.verifyHomePageTitle(), "Home page title doesn't match");
     }
 
-    @Test
-    public void VerifyHomePageTop() {
-
-    }
-
-    @Test
-    public void VerifyHomePageBottom() throws InterruptedException {
-
-    }
-
-    @Test
-    public void VerifyHomePageMiddle() {
-
-    }
 }

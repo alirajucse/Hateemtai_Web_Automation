@@ -43,7 +43,7 @@ public void invalidLoginCredentialsVerify() throws InterruptedException {
     loginPage.clickLoginButton();
     loginPage.tryWithInvalidCredentials();
 }
-@Test(priority = 1,groups = { "Gmail" })
+@Test(priority = 5,groups = { "Login" })
 public void loginWithGmail() throws InterruptedException {
    homePage.homeScreen();
    loginPage.clickLoginText();
@@ -64,7 +64,7 @@ public void popUpLoginTest() throws InterruptedException {
     loginPage.loginverify();
     loginPage.logout();
 }
-@Test(priority = 2,groups = { "Facebook" })
+@Test(priority = 4,groups = { "Login" })
 public void fbLoginTest() throws InterruptedException {
     homePage.homeScreen();
     loginPage.clickLoginText();
@@ -75,7 +75,7 @@ public void fbLoginTest() throws InterruptedException {
     loginPage.loginverify();
     loginPage.logout();
 }
-@Test(priority = 2,groups = { "Gmail" })
+@Test(priority = 6,groups = { "Login" })
 public void popUPGmailLoginTest() throws InterruptedException {
     homePage.homeScreen();
     checkoutPage.productAddtoCart();
@@ -86,7 +86,7 @@ public void popUPGmailLoginTest() throws InterruptedException {
     loginPage.loginverify();
     loginPage.logout();
 }
-@Test(priority = 1,groups = { "Facebook" })
+@Test(priority = 3,groups = { "Login" })
 public void popUPFacebookLoginTest() throws InterruptedException {
     homePage.homeScreen();
     checkoutPage.productAddtoCart();

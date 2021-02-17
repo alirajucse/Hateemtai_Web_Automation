@@ -12,18 +12,18 @@ public class CountrySwitchTest extends TestBase {
     private CountrySwitchPage countrySwitchPage;
     private HomePage homePage;
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void setUp() {
         driver = getDriver();
         countrySwitchPage=new CountrySwitchPage(driver);
     }
 
-    @Test
+    @Test(priority = 1,groups = { "Country Switch" })
     public void switchToUSAViewTest() throws InterruptedException {
         homePage=new HomePage(driver);
         countrySwitchPage.switchToUSAViewMethod();
     }
-    @Test
+    @Test(priority = 2,groups = { "Country Switch" })
     public void switchToBDViewTest() throws InterruptedException {
         countrySwitchPage=new CountrySwitchPage(driver);
         countrySwitchPage.switchToUSAViewMethod();

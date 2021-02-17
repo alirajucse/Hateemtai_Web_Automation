@@ -51,7 +51,7 @@ public class LoginPage {
     }
 
     public void LoginCredentialInput(String username,String password) throws InterruptedException {
-        Thread.sleep(15000);
+        Thread.sleep(10000);
         driver.findElement(usernameField).sendKeys(username);
         Thread.sleep(3000);
         driver.findElement(passwordField).sendKeys(password);
@@ -68,7 +68,7 @@ public class LoginPage {
     }
 
     public void loginverify() throws InterruptedException {
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         boolean loginVerify=driver.findElement(loginProfileButton).isDisplayed();
         if(loginVerify){
             System.out.println("Login successful");
@@ -76,7 +76,7 @@ public class LoginPage {
     }
 
     public void clickGmailLoginButton() throws InterruptedException {
-        Thread.sleep(50000);
+        Thread.sleep(20000);
         driver.findElement(gmailButton).click();
 
     }
@@ -98,10 +98,10 @@ public class LoginPage {
             driver.switchTo().window(winHandle);
         }
         // Perform the actions on new window
-        Thread.sleep(50000);
+        Thread.sleep(20000);
         driver.findElement(email).sendKeys(mail);
         driver.findElement(next).click();
-        Thread.sleep(100000);
+        Thread.sleep(20000);
         driver.findElement(password).sendKeys(pswrd);
         driver.findElement(next).click();
         // Close the new window, if that window no more required
@@ -125,16 +125,16 @@ public class LoginPage {
         driver.findElement(gmailEmailField).sendKeys(gmail);
         Thread.sleep(3000);
         driver.findElement(next).click();
-        Thread.sleep(30000);
+        Thread.sleep(15000);
         driver.findElement(gmailEmailPassword).sendKeys(gmailPasswrd);
         Thread.sleep(3000);
         driver.findElement(next).click();
-        Thread.sleep(100000);
+        Thread.sleep(15000);
         driver.switchTo().window(winHandleBefore);
     }
 
     public void popUpLogin(String popUpmail,String popUpPwrd) throws InterruptedException {
-        Thread.sleep(30000);
+        Thread.sleep(15000);
         driver.findElement(popupLoginEmailField).sendKeys(popUpmail);
         Thread.sleep(3000);
         driver.findElement(popupLoginPasswordField).sendKeys(popUpPwrd);
@@ -143,7 +143,7 @@ public class LoginPage {
     }
 
     public void ClickfacebookLoginButton() throws InterruptedException {
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         driver.findElement(fbLoginButton).click();
         Thread.sleep(1000);
     }
@@ -164,19 +164,18 @@ public class LoginPage {
         driver.findElement(fbPasswordField).sendKeys(fbPasswrd);
         Thread.sleep(5000);
         driver.findElement(fbLoginConfirmButton).click();
-        Thread.sleep(100000);
+        Thread.sleep(15000);
         driver.switchTo().window(winHandleBefore);
         }
 
         public void popUPGmailLogin() throws InterruptedException {
-           Thread.sleep(100000);
+           Thread.sleep(15000);
            driver.findElement(popUpGmailButton).click();
         }
 
         public void clickPopUPFBButton() throws InterruptedException {
-            Thread.sleep(20000);
+            Thread.sleep(15000);
             driver.findElement(popUPFBButton).click();
-            Thread.sleep(20000);
         }
 
         public void popUpFbLogin(String fbEmail,String fbPasswrd) throws InterruptedException {
@@ -194,7 +193,7 @@ public class LoginPage {
             driver.findElement(popUPFBPassField).sendKeys(fbPasswrd);
             Thread.sleep(10000);
             driver.findElement(popUPFBSigninButton).click();
-            Thread.sleep(100000);
+            Thread.sleep(15000);
             driver.switchTo().window(winHandleBefore);
         }
         public void logout() throws InterruptedException {
@@ -202,7 +201,6 @@ public class LoginPage {
         driver.findElement(loginProfileButton).click();
         Thread.sleep(8000);
         driver.findElement(logoutButton).click();
-        Thread.sleep(15000);
         }
 
     }

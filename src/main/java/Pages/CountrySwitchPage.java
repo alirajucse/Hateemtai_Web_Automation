@@ -37,7 +37,7 @@ public class CountrySwitchPage {
         Thread.sleep(10000);
         }
     public void switchToBDViewMethod() throws InterruptedException {
-        Thread.sleep(20000);
+        Thread.sleep(15000);
         driver.findElement(clickCountryIcon).click();
         Thread.sleep(8000);
         driver.findElement(switchToBDView).click();

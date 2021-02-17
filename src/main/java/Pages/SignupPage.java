@@ -59,7 +59,7 @@ public class SignupPage {
     }
 
     public void successfulSignUPVerify() throws InterruptedException {
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         Boolean signUpVerify= driver.findElement(signUPVerify).isDisplayed();
         if(signUpVerify){
             System.out.println("Sign up successful");

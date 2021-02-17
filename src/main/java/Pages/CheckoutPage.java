@@ -48,11 +48,11 @@ public class CheckoutPage {
     }
 
     public void productAddtoCart() throws InterruptedException {
-        Thread.sleep(15000);
+        Thread.sleep(10000);
         driver.findElement(FirstMenuItem).click();
-        Thread.sleep(15000);
+        Thread.sleep(10000);
         driver.findElement(product).click();
-        Thread.sleep(15000);
+        Thread.sleep(10000);
         driver.findElement(addToCart).click();
         Thread.sleep(2000);
         driver.findElement(cartIcon).click();
@@ -61,7 +61,7 @@ public class CheckoutPage {
     }
 
     public void productAddToCartFromQuickView() throws InterruptedException {
-        Thread.sleep(15000);
+        Thread.sleep(10000);
         driver.findElement(FirstMenuItem).click();
         Thread.sleep(15000);
         Actions builder = new Actions(driver);
@@ -99,11 +99,11 @@ public class CheckoutPage {
         }
     }
     public void fbPopUpCheckout() throws InterruptedException {
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         driver.findElement(popUPFBButton).click();
     }
     public void gmailPopUpCheckout() throws InterruptedException {
-        Thread.sleep(40000);
+        Thread.sleep(20000);
         driver.findElement(popUpGmailButton).click();
     }
     public void popUPSignUPCheckoutShippingAddress(String name,String address,String phone,String zipcode) throws InterruptedException {

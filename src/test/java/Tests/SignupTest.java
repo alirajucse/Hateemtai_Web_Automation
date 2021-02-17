@@ -16,6 +16,7 @@ public class SignupTest extends TestBase {
     private CheckoutPage checkoutPage;
     private HomePage homePage;
 
+
     @BeforeClass(alwaysRun = true)
     public void setUp() {
         driver = getDriver();
@@ -25,23 +26,25 @@ public class SignupTest extends TestBase {
         homePage=new HomePage(driver);
     }
 
-    @Test(groups = { "Sign up" })
+    @Test(priority = 1,groups = { "Sign up" })
     public void signUPTestWithValidInformation() throws InterruptedException {
         homePage.homeScreen();
         signupPage.signUpLinkClick();
-        signupPage.signUPInformationInputMethod("Raju","raju112@ht.com","pP@01921666","01747458963");
+        signupPage.signUPInformationInputMethod("Raju","raju118@ht.com","pP@01921666","01747458963");
         signupPage.signUPFinalProcessMethod();
         signupPage.successfulSignUPVerify();
+        loginPage.logout();
     }
-    @Test(groups = { "Sign up" })
+    @Test(priority = 2,groups = { "Sign up" })
     public void popUPSignupTest() throws InterruptedException {
         homePage.homeScreen();
         checkoutPage.productAddtoCart();
         signupPage.clickPopUPSignupButton();
-        signupPage.popUPSignUPCredentials("Raju","raju112@ht.com","01747359585","pP@01921666");
+        signupPage.popUPSignUPCredentials("Raju","raju119@ht.com","01747359585","pP@01921666");
         signupPage.successfulSignUPVerify();
+        loginPage.logout();
     }
-    @Test(groups = { "Sign up" })
+    @Test(priority = 3,groups = { "Sign up" })
     public void existingUserSignUpTest() throws InterruptedException {
         homePage.homeScreen();
         signupPage.signUpLinkClick();
