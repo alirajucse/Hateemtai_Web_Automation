@@ -10,11 +10,13 @@
     <test name="Login Tests">
         <groups>
             <run>
-                <include name = "Login" />
+                <include name = "smoke" />
             </run>
         </groups>
         <classes>
             <class name="Tests.LoginTest" />
+                 <parameter name="email" value="raju82@ht.com"></parameter>
+                 <parameter name="password" value="pP@01921666"></parameter>
         </classes>
     </test>
 </suite>

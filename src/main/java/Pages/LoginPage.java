@@ -1,6 +1,7 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
@@ -8,7 +9,7 @@ public class LoginPage {
     private By loginlink = By.xpath("//a[normalize-space()='LOG IN']");
     private By usernameField = By.xpath("//input[@placeholder='Email*']");
     private By passwordField = By.xpath("//input[@placeholder='Password*']");
-    private By loginButton = By.xpath("//div[@aria-labelledby='signuptab-tab-second']//form//div//div//button[@type='submit']");
+    private By loginButton = By.xpath("//span[normalize-space()='Login']");
     private By loginVerify = By.xpath("//a[normalize-space()='MY ACCOUNT']");
     private By actualResult = By.partialLinkText("MY ACCOUNT");
     private By gmailButton = By.xpath("//body/div[@id='root']/div/div/div/div[@id='signuptab']/div[@id='RegTabContent']/div[@id='signuptab-pane-second']/form/div/div/p/button[1]");
@@ -18,8 +19,8 @@ public class LoginPage {
     private By next = By.xpath("//div[@id='identifierNext']//div[2]");
     private By password = By.xpath("//input[@name='password']");
     private By invalidLoginCredentialsCheck = By.xpath("//strong[normalize-space()='Invalid username or password.']");
-    private By popupLoginEmailField = By.xpath("//input[@id='login_email']");
-    private By popupLoginPasswordField = By.xpath("//input[@id='login_password']");
+    private By popupLoginEmailField = By.id("login_email");
+    private By popupLoginPasswordField = By.id("login_password");
     private By popUpLoginSubmitButton = By.xpath("//body//div[@role='dialog']//div[@role='document']//div//div//div//div[3]//button[1]");
     private By checkout = By.xpath("//html//body//div//div//header//div//div//div//div//div//div//div//ul//div//div//div//div//div//button");
     private By fbLoginButton = By.xpath("//div[@id='signuptab-pane-second']//form//div//div//button[@type='button'][normalize-space()='Login with Facebook']");
@@ -29,10 +30,14 @@ public class LoginPage {
     private By popUpGmailButton = By.xpath("//body/div[@role='dialog']/div[@role='dialog']/div/div[@role='document']/div/div/div/div/p/button[1]");
     private By popUPFBButton = By.xpath("//body/div[@role='dialog']/div[@role='dialog']/div/div[@role='document']/div/div/div/div/p/span/button[1]");
     private By loginProfileButton= By.id("ddlProduct");
-    private By logoutButton= By.xpath("//a[normalize-space()='LOG OUT']");
+    private By logoutButton= By.partialLinkText("Log O");
     private By popUPFBEmailField= By.id("email");
     private By popUPFBPassField= By.id("pass");
     private By popUPFBSigninButton= By.xpath("//input[@name='login']");
+    private By beforeGmailUser= By.xpath("//input[@name='identifier']");
+    private By beforeGmailLoginNextButton= By.xpath("//div[@data-is-touch-wrapper='true']//div[2]");
+    private By beforeGmailPass= By.xpath("//input[@name='password']");
+    private By beforeGmailLoginSubmitButton= By.xpath("//body//div[@data-continent='Southern Asia']//div[@role='presentation']//div[@role='presentation']//div[@role='presentation']//div[@role='presentation']//div[@role='presentation']//div//div//div[1]//div[1]//div[1]//button[1]//div[2]");
 
 
     public LoginPage(WebDriver driver) {
@@ -59,12 +64,7 @@ public class LoginPage {
 
     public void clickLoginButton() throws InterruptedException {
         Thread.sleep(2000);
-        if(driver.findElement(loginButton).isDisplayed()){
-            driver.findElement(loginButton).click();
-        }
-        else {
-            System.out.println("login button element not found");
-        }
+        driver.findElement(loginButton).click();
     }
 
     public void loginverify() throws InterruptedException {
@@ -82,7 +82,7 @@ public class LoginPage {
     }
 
     public void tryWithInvalidCredentials() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         driver.findElement(invalidLoginCredentialsCheck).isDisplayed();
         System.out.println("Test case passed");
     }
@@ -108,6 +108,30 @@ public class LoginPage {
         driver.close();
 // Switch back to original browser (first window)
         driver.switchTo().window(winHandleBefore);
+    }
+    public void switchToTab() {
+        // Switching between tabs using CTRL + tab keys.
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "\t");
+    }
+    public void gmailLoginSeperately(String gmail,String pass) throws InterruptedException {
+        // Open tab 2 using CTRL + T keys.
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
+
+        // Open URL In 2nd tab.
+        driver.get("http://www.gmail.com");
+        // Call switchToTab() method to switch to the first tab
+        switchToTab();
+        driver.findElement(beforeGmailUser).sendKeys(gmail);
+        Thread.sleep(7000);
+        driver.findElement(beforeGmailLoginNextButton).click();
+        Thread.sleep(7000);
+        driver.findElement(beforeGmailPass).sendKeys(pass);
+        Thread.sleep(5000);
+        driver.findElement(beforeGmailLoginSubmitButton).click();
+        // Call switchToTab() method to switch to the second tab.
+        switchToTab();
+        Thread.sleep(15000);
+        driver.navigate().to("www.gmail.com");
     }
 
     public void gmailCredentials(String gmail,String gmailPasswrd) throws InterruptedException {
@@ -199,7 +223,7 @@ public class LoginPage {
         public void logout() throws InterruptedException {
         Thread.sleep(15000);
         driver.findElement(loginProfileButton).click();
-        Thread.sleep(8000);
+        Thread.sleep(10000);
         driver.findElement(logoutButton).click();
         }
 

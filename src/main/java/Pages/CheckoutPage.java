@@ -1,5 +1,4 @@
 package Pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,11 +23,13 @@ public class CheckoutPage {
     private By addToCart= By.xpath("//button[normalize-space()='add to cart']");
     private By cartIcon= By.xpath("//img[@src='./img/cartIcon.png']");
     private By quickViewCheckoutButtton= By.xpath("//a[normalize-space()='Checkout']");
-    private By checkout= By.xpath("//html//body//div//div//header//div//div//div//div//div//div//div//ul//div//div//div//div//div//button");
+    private By checkout= By.xpath("//button[normalize-space()='Checkout']");
+    private By viewCart= By.xpath("//a[normalize-space()='View Cart']");
+    private By checkoutFromViewCart= By.xpath("//a[@href='/checkout']");
     private By paymentMethodCashOnDelivary= By.xpath("//label[normalize-space()='Cash on Delivery']");
     private By placeOrder= By.xpath("//body//div[@id='root']//form//div//button[1]");
     private By successfulOrderMessage= By.xpath("//p[normalize-space()='Your Order has been successfully processed.']");
-    private By popUPFBButton=By.xpath("//body/div/div/div/div/div/div/div/div/p/span/button[1]");
+    private By popUPFBButton=By.xpath("//body/div[@role='dialog']/div[@role='dialog']/div/div[@role='document']/div/div/div/div/p/span/button[1]");
     private By popUpGmailButton= By.xpath("//body/div[@role='dialog']/div[@role='dialog']/div/div[@role='document']/div/div/div/div/p/button[1]");
     private By shippngAddressName= By.xpath("//input[@placeholder='Enter Your Full Name']");
     private By shippngAddressLine1= By.xpath("//input[@placeholder='Area, Street address, P.O. box, Company, C/O']");
@@ -48,7 +49,7 @@ public class CheckoutPage {
     }
 
     public void productAddtoCart() throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(15000);
         driver.findElement(FirstMenuItem).click();
         Thread.sleep(10000);
         driver.findElement(product).click();
@@ -59,7 +60,20 @@ public class CheckoutPage {
         Thread.sleep(7000);
         driver.findElement(checkout).click();
     }
-
+    public void checkoutViaCartDetails() throws InterruptedException {
+        Thread.sleep(15000);
+        driver.findElement(FirstMenuItem).click();
+        Thread.sleep(10000);
+        driver.findElement(product).click();
+        Thread.sleep(10000);
+        driver.findElement(addToCart).click();
+        Thread.sleep(2000);
+        driver.findElement(cartIcon).click();
+        Thread.sleep(7000);
+        driver.findElement(viewCart).click();
+        Thread.sleep(8000);
+        driver.findElement(checkoutFromViewCart).click();
+    }
     public void productAddToCartFromQuickView() throws InterruptedException {
         Thread.sleep(10000);
         driver.findElement(FirstMenuItem).click();

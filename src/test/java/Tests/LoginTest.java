@@ -6,6 +6,7 @@ import Pages.HomePage;
 import Pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
@@ -21,13 +22,13 @@ public class LoginTest extends TestBase {
         checkoutPage=new CheckoutPage(driver);
         homePage=new HomePage(driver);
     }
-
-@Test(priority = 1,groups = { "Login" })
-public void testSuccessfulLogin() throws InterruptedException {
+@Parameters({ "email", "password" })
+@Test(priority = 1,groups = { "Login","smoke" })
+public void testSuccessfulLogin(String email,String pass) throws InterruptedException {
     Thread.sleep(40000);
     loginPage.clickLoginText();
     Thread.sleep(50000);
-    loginPage.LoginCredentialInput("raju82@ht.com","pP@01921666");
+    loginPage.LoginCredentialInput(email,pass);
     loginPage.clickLoginButton();
     Thread.sleep(50000);
     homePage.homeScreen();
@@ -75,7 +76,7 @@ public void fbLoginTest() throws InterruptedException {
     loginPage.loginverify();
     loginPage.logout();
 }
-@Test(priority = 6,groups = { "Login" })
+@Test(priority = 6,groups = { "L" })
 public void popUPGmailLoginTest() throws InterruptedException {
     homePage.homeScreen();
     checkoutPage.productAddtoCart();
@@ -86,7 +87,7 @@ public void popUPGmailLoginTest() throws InterruptedException {
     loginPage.loginverify();
     loginPage.logout();
 }
-@Test(priority = 3,groups = { "Login" })
+@Test(priority = 3,groups = { "L" })
 public void popUPFacebookLoginTest() throws InterruptedException {
     homePage.homeScreen();
     checkoutPage.productAddtoCart();
@@ -96,5 +97,9 @@ public void popUPFacebookLoginTest() throws InterruptedException {
     Thread.sleep(10000);
     loginPage.loginverify();
     loginPage.logout();
+}
+@Test(priority = 1,groups = { "Log" })
+public void beforeGmailLoginTest() throws InterruptedException {
+    loginPage.gmailLoginSeperately("alirajujnu1@gmail.com","pP@01921666");
 }
 }

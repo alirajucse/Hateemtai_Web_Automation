@@ -7,6 +7,7 @@ import Pages.SignupPage;
 import Pages.CheckoutPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class SignupTest extends TestBase {
@@ -25,22 +26,21 @@ public class SignupTest extends TestBase {
         signupPage=new SignupPage(driver);
         homePage=new HomePage(driver);
     }
-
-    @Test(priority = 1,groups = { "Sign up" })
-    public void signUPTestWithValidInformation() throws InterruptedException {
+    @Parameters({ "user","email","password","phone" })
+    @Test(priority = 1,groups = { "Sign up","smoke" })
+    public void signUPTestWithValidInformation(String user,String email,String pass,String phone) throws InterruptedException {
         homePage.homeScreen();
         signupPage.signUpLinkClick();
-        signupPage.signUPInformationInputMethod("Raju","raju118@ht.com","pP@01921666","01747458963");
+        signupPage.signUPInformationInputMethod(user,email,pass,phone);
         signupPage.signUPFinalProcessMethod();
         signupPage.successfulSignUPVerify();
         loginPage.logout();
     }
     @Test(priority = 2,groups = { "Sign up" })
     public void popUPSignupTest() throws InterruptedException {
-        homePage.homeScreen();
         checkoutPage.productAddtoCart();
         signupPage.clickPopUPSignupButton();
-        signupPage.popUPSignUPCredentials("Raju","raju119@ht.com","01747359585","pP@01921666");
+        signupPage.popUPSignUPCredentials("Raju","raju150@ht.com","01747359585","pP@01921666");
         signupPage.successfulSignUPVerify();
         loginPage.logout();
     }

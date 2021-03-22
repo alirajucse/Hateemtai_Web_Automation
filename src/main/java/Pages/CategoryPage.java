@@ -10,7 +10,7 @@ import java.awt.*;
 public class CategoryPage {
 
     private WebDriver driver;
-    private By groceryCategoryProduct= By.xpath("//div[@aria-hidden='false']//div//div//div//div//div//a[contains(text(),'Mustard Seed (Red) 100 gm')]");
+    private By groceryCategoryProduct= By.xpath("//div[@aria-hidden='false']//div//div//div//div//div//a[contains(text(),'Bombay Sweets Potato Crackers 22 gm')]");
     private By FirstMenuItem=By.xpath("//body/div[@id='root']/div/div/div/div/div/div[@id='responsive-nav']/ul[@id='dropdown-menu']/li[1]/a[1]");
     private By clickCategoryMobileTablet = By.xpath("//body/div/div/div/div/div/div/div/ul[@role='menu']/li[2]/a[1]");
     private By mobileTabletCategoryProduct= By.xpath("//div[@aria-hidden='false']//div//div//div//div//div//a[contains(text(),'Prooton Screen Protector-RED MI 5')]");
@@ -31,9 +31,10 @@ public class CategoryPage {
     private By stationaryOfficeSuppliesCategory= By.xpath("//body/div/div/div/div/div/div/div/ul[@role='menu']/li[10]/a[1]");
     private By stationaryOfficeSuppliesCategoryProduct= By.xpath("//div[@aria-hidden='false']//div//div//div//div//div//a[contains(text(),'Diamond Binder Clip Black 19 mm (Pack of 12)')]");
     private By moreCategories= By.xpath("//a[normalize-space()='More Categories']");
+    private By cookedFoodMenuItem= By.xpath("//body/div/div/div/div/div/div/div/ul[@role='menu']/li[2]/a[1]");
+    private By cookedFoodCategoryProduct= By.xpath("//div[@aria-hidden='false']//div//div//div//div//div//a[contains(text(),'Chicken Biriyani Small Box (FR)')]");
 
     public CategoryPage(WebDriver driver) {
-
         this.driver = driver;
     }
 
@@ -189,6 +190,16 @@ public class CategoryPage {
         else{
             System.out.println("Menu item not found");
             System.out.println("Test case failed");
+        }
+    }
+    public void cookedFoodMenu() throws InterruptedException {
+        Thread.sleep(10000);
+        driver.findElement(cookedFoodMenuItem).click();
+        Thread.sleep(10000);
+        driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
+        Thread.sleep(15000);
+        if(driver.findElement(cookedFoodCategoryProduct).isDisplayed()){
+            System.out.println("Test case passed");
         }
     }
     public void moreCaterories() throws InterruptedException {

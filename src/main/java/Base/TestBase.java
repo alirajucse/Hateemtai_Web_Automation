@@ -1,8 +1,6 @@
 package Base;
 
-import Pages.CountrySwitchPage;
-import Pages.HomePage;
-import Pages.LoginPage;
+import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -16,6 +14,8 @@ public class TestBase {
     protected HomePage homePage;
     protected LoginPage loginPage;
     protected CountrySwitchPage  countrySwitchPage;
+    protected CategoryPage categoryPage;
+    protected CheckoutPage checkoutPage;
     //private static String driverPath = "resource/geckodriver.exe";
     private static String driverPath = "resource\\";
 
@@ -64,6 +64,7 @@ public class TestBase {
         System.setProperty("webdriver.edge.driver", driverPath + "msedgedriver.exe");
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
+        //driver.manage().window().setSize(new Dimension(360, 640));
         driver.navigate().to(appURL);
         Thread.sleep(15000);
         return driver;

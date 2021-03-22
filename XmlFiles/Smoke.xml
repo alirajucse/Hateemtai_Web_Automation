@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Smoke Suite" verbose="1">
-    <listeners>
-        <listener class-name="Base.TestListener" />
-    </listeners>
-    <parameter name="browserType" value="edge" />
-    <parameter name="appURL" value="https://www.hateemtai.com/" />
-
-    <test name="Smoke Tests">
-        <groups>
-            <run>
-                <include name = "Country Switch" />
-                <include name = "Category" />
-            </run>
-        </groups>
-        <classes>
-            <class name="Tests.CountrySwitchTest" />
-            <class name="Tests.CategoryTest" />
-        </classes>
-    </test>
-
+    <suite-files>
+        <suite-file path="Signup.xml" />
+        <suite-file path="Login.xml" />
+        <suite-file path="Checkout.xml" />
+        <!--suite-file path="Home.xml" /> -->
+    </suite-files>
 </suite>

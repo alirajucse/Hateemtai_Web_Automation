@@ -10,11 +10,13 @@
     <test name="Checkout Tests">
         <groups>
             <run>
-                <include name = "Checkout" />
+                <include name = "smoke" />
             </run>
         </groups>
         <classes>
             <class name="Tests.CheckoutTest" />
+                <parameter name="email" value="raju82@ht.com"></parameter>
+                <parameter name="password" value="pP@01921666"></parameter>
         </classes>
     </test>
 </suite>
