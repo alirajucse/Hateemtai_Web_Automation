@@ -3,6 +3,7 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FBMessengerPage {
     private WebDriver driver;
@@ -15,7 +16,7 @@ public class FBMessengerPage {
     }
 
     public void chatWithoutLogin() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         int size = driver.findElements(By.tagName("iframe")).size();
         System.out.println("Total Frames --" + size);
 

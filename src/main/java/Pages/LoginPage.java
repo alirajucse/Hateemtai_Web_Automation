@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
     private WebDriver driver;
@@ -46,7 +48,8 @@ public class LoginPage {
     }
 
     public void clickLoginText() throws InterruptedException {
-        Thread.sleep(10000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((loginlink)));
         if(driver.findElement(loginlink).isDisplayed()){
             driver.findElement(loginlink).click();
         }
@@ -56,19 +59,22 @@ public class LoginPage {
     }
 
     public void LoginCredentialInput(String username,String password) throws InterruptedException {
-        Thread.sleep(10000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((usernameField)));
         driver.findElement(usernameField).sendKeys(username);
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((passwordField)));
         driver.findElement(passwordField).sendKeys(password);
     }
 
     public void clickLoginButton() throws InterruptedException {
-        Thread.sleep(2000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((loginButton)));
         driver.findElement(loginButton).click();
     }
 
     public void loginverify() throws InterruptedException {
-        Thread.sleep(20000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((loginProfileButton)));
         boolean loginVerify=driver.findElement(loginProfileButton).isDisplayed();
         if(loginVerify){
             System.out.println("Login successful");
@@ -76,18 +82,21 @@ public class LoginPage {
     }
 
     public void clickGmailLoginButton() throws InterruptedException {
-        Thread.sleep(20000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((gmailButton)));
         driver.findElement(gmailButton).click();
 
     }
 
     public void tryWithInvalidCredentials() throws InterruptedException {
-        Thread.sleep(8000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((invalidLoginCredentialsCheck)));
         driver.findElement(invalidLoginCredentialsCheck).isDisplayed();
         System.out.println("Test case passed");
     }
 
     public void credentialsInput(String mail, String pswrd) throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         // Store the current window handle
         String winHandleBefore = driver.getWindowHandle();
 
@@ -98,10 +107,10 @@ public class LoginPage {
             driver.switchTo().window(winHandle);
         }
         // Perform the actions on new window
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((email)));
         driver.findElement(email).sendKeys(mail);
         driver.findElement(next).click();
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((password)));
         driver.findElement(password).sendKeys(pswrd);
         driver.findElement(next).click();
         // Close the new window, if that window no more required
@@ -114,6 +123,7 @@ public class LoginPage {
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "\t");
     }
     public void gmailLoginSeperately(String gmail,String pass) throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         // Open tab 2 using CTRL + T keys.
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
 
@@ -122,19 +132,19 @@ public class LoginPage {
         // Call switchToTab() method to switch to the first tab
         switchToTab();
         driver.findElement(beforeGmailUser).sendKeys(gmail);
-        Thread.sleep(7000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((beforeGmailLoginNextButton)));
         driver.findElement(beforeGmailLoginNextButton).click();
-        Thread.sleep(7000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((beforeGmailPass)));
         driver.findElement(beforeGmailPass).sendKeys(pass);
-        Thread.sleep(5000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((beforeGmailLoginSubmitButton)));
         driver.findElement(beforeGmailLoginSubmitButton).click();
         // Call switchToTab() method to switch to the second tab.
         switchToTab();
-        Thread.sleep(15000);
         driver.navigate().to("www.gmail.com");
     }
 
     public void gmailCredentials(String gmail,String gmailPasswrd) throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         // Store the current window handle
         String winHandleBefore = driver.getWindowHandle();
 
@@ -144,35 +154,36 @@ public class LoginPage {
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        Thread.sleep(40000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((gmailEmailField)));
         // Perform the actions on new window
         driver.findElement(gmailEmailField).sendKeys(gmail);
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((next)));
         driver.findElement(next).click();
-        Thread.sleep(15000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((gmailEmailPassword)));
         driver.findElement(gmailEmailPassword).sendKeys(gmailPasswrd);
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((next)));
         driver.findElement(next).click();
-        Thread.sleep(15000);
         driver.switchTo().window(winHandleBefore);
     }
 
     public void popUpLogin(String popUpmail,String popUpPwrd) throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUPFBEmailField)));
         driver.findElement(popupLoginEmailField).sendKeys(popUpmail);
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popupLoginPasswordField)));
         driver.findElement(popupLoginPasswordField).sendKeys(popUpPwrd);
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUpLoginSubmitButton)));
         driver.findElement(popUpLoginSubmitButton).click();
     }
 
     public void ClickfacebookLoginButton() throws InterruptedException {
-        Thread.sleep(20000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((fbLoginButton)));
         driver.findElement(fbLoginButton).click();
-        Thread.sleep(1000);
     }
 
     public void fbcredentials(String fbEmail,String fbPasswrd) throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         // Store the current window handle
         String winHandleBefore = driver.getWindowHandle();
 
@@ -184,28 +195,28 @@ public class LoginPage {
         }
         // Perform the actions on new window
         driver.findElement(fbEmailField).sendKeys(fbEmail);
-        Thread.sleep(5000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((fbPasswordField)));
         driver.findElement(fbPasswordField).sendKeys(fbPasswrd);
-        Thread.sleep(5000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((fbLoginConfirmButton)));
         driver.findElement(fbLoginConfirmButton).click();
-        Thread.sleep(15000);
         driver.switchTo().window(winHandleBefore);
         }
 
-        public void popUPGmailLogin() throws InterruptedException {
-           Thread.sleep(15000);
-           driver.findElement(popUpGmailButton).click();
+    public void popUPGmailLogin() throws InterruptedException {
+        Thread.sleep(15000);
+        driver.findElement(popUpGmailButton).click();
         }
 
-        public void clickPopUPFBButton() throws InterruptedException {
-            Thread.sleep(15000);
-            driver.findElement(popUPFBButton).click();
-        }
-
-        public void popUpFbLogin(String fbEmail,String fbPasswrd) throws InterruptedException {
-
+    public void clickPopUPFBButton() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUPFBButton)));
         driver.findElement(popUPFBButton).click();
-        Thread.sleep(20000);
+        }
+
+    public void popUpFbLogin(String fbEmail,String fbPasswrd) throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        driver.findElement(popUPFBButton).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUPFBEmailField)));
         String winHandleBefore = driver.getWindowHandle();
         // Switch to new window opened
             for(String winHandle : driver.getWindowHandles()){
@@ -213,15 +224,14 @@ public class LoginPage {
             }
             // Perform the actions on new window
             driver.findElement(popUPFBEmailField).sendKeys(fbEmail);
-            Thread.sleep(10000);
+            wait.until(ExpectedConditions.presenceOfElementLocated((popUPFBPassField)));
             driver.findElement(popUPFBPassField).sendKeys(fbPasswrd);
-            Thread.sleep(10000);
+            wait.until(ExpectedConditions.presenceOfElementLocated((popUPFBSigninButton)));
             driver.findElement(popUPFBSigninButton).click();
-            Thread.sleep(15000);
             driver.switchTo().window(winHandleBefore);
         }
-        public void logout() throws InterruptedException {
-        Thread.sleep(15000);
+    public void logout() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.findElement(loginProfileButton).click();
         Thread.sleep(10000);
         driver.findElement(logoutButton).click();

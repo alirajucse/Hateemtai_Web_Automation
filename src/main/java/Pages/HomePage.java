@@ -1,6 +1,8 @@
 package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
@@ -14,7 +16,8 @@ public class HomePage {
     }
 
     public void homeScreen() throws InterruptedException {
-        Thread.sleep(10000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((clickHomeIcon)));
         driver.findElement(clickHomeIcon).click();
     }
 
@@ -27,6 +30,4 @@ public class HomePage {
         String expectedPageTitle = "Hateemtai.com | Buy & Sell Worldwide";
         return getPageTitle().contains(expectedPageTitle);
     }
-
-
 }

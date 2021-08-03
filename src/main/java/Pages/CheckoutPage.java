@@ -1,8 +1,12 @@
 package Pages;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckoutPage {
 
@@ -23,7 +27,7 @@ public class CheckoutPage {
     private By addToCart= By.xpath("//button[normalize-space()='add to cart']");
     private By cartIcon= By.xpath("//img[@src='./img/cartIcon.png']");
     private By quickViewCheckoutButtton= By.xpath("//a[normalize-space()='Checkout']");
-    private By checkout= By.xpath("//button[normalize-space()='Checkout']");
+    private By checkout= By.xpath("//a[@href='/checkout']");
     private By viewCart= By.xpath("//a[normalize-space()='View Cart']");
     private By checkoutFromViewCart= By.xpath("//a[@href='/checkout']");
     private By paymentMethodCashOnDelivary= By.xpath("//label[normalize-space()='Cash on Delivery']");
@@ -43,62 +47,75 @@ public class CheckoutPage {
     private By quickViewAddToCartButton= By.xpath("//div[@role='document']//div//div//div//div//div//div//div//button[contains(text(),'add to cart')]");
     private By quickViewPopUpCloseButton= By.xpath("//span[@aria-hidden='true']");
     private By shippingAddressStateValue  = By.xpath("//*[text()=’Dhaka’]");
+    private By confirmButton= By.xpath("//span[normalize-space()='Confirm']");
+    private By cashOnDeliveryMethod= By.xpath("//label[normalize-space()='Cash on Delivery']");
+    private By placeOrderButton= By.xpath("//button[normalize-space()='Place Order']");
+
 
     public CheckoutPage(WebDriver driver){
         this.driver = driver;
     }
 
     public void productAddtoCart() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((FirstMenuItem)));
         driver.findElement(FirstMenuItem).click();
-        Thread.sleep(10000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((product)));
         driver.findElement(product).click();
-        Thread.sleep(10000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((addToCart)));
         driver.findElement(addToCart).click();
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((cartIcon)));
         driver.findElement(cartIcon).click();
-        Thread.sleep(7000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((product)));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,250)");
+        wait.until(ExpectedConditions.presenceOfElementLocated((checkout)));
         driver.findElement(checkout).click();
     }
     public void checkoutViaCartDetails() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((FirstMenuItem)));
         driver.findElement(FirstMenuItem).click();
-        Thread.sleep(10000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((product)));
         driver.findElement(product).click();
-        Thread.sleep(10000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((addToCart)));
         driver.findElement(addToCart).click();
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((cartIcon)));
         driver.findElement(cartIcon).click();
-        Thread.sleep(7000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((viewCart)));
         driver.findElement(viewCart).click();
-        Thread.sleep(8000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((checkoutFromViewCart)));
         driver.findElement(checkoutFromViewCart).click();
     }
     public void productAddToCartFromQuickView() throws InterruptedException {
-        Thread.sleep(10000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((FirstMenuItem)));
         driver.findElement(FirstMenuItem).click();
-        Thread.sleep(15000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((product)));
         Actions builder = new Actions(driver);
         WebElement element = driver.findElement(product);
         builder.moveToElement(element).build().perform();
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((quickView)));
         driver.findElement(quickView).click();
-        Thread.sleep(15000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((quickViewAddToCartButton)));
         driver.findElement(quickViewAddToCartButton).click();
-        Thread.sleep(4000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((quickViewPopUpCloseButton)));
         driver.findElement(quickViewPopUpCloseButton).click();
-        Thread.sleep(15000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((cartIcon)));
         driver.findElement(cartIcon).click();
-        Thread.sleep(7000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((quickViewCheckoutButtton)));
         driver.findElement(quickViewCheckoutButtton).click();
     }
 
     public void checkoutMethod() throws InterruptedException {
-        Thread.sleep(15000);
-        driver.findElement(paymentMethodCashOnDelivary).click();
-        Thread.sleep(10000);
-        driver.findElement(placeOrder).click();
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((confirmButton)));
+        driver.findElement(confirmButton).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated((cashOnDeliveryMethod)));
+        driver.findElement(cashOnDeliveryMethod).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated((placeOrderButton)));
+        driver.findElement(placeOrderButton).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated((successfulOrderMessage)));
        // String expectedResult= "Your Order has been successfully processed.";
        // String actualResult= driver.findElement(successfulOrderMessage).getText();
        // Assert.assertEquals(expectedResult,actualResult);
@@ -113,62 +130,37 @@ public class CheckoutPage {
         }
     }
     public void fbPopUpCheckout() throws InterruptedException {
-        Thread.sleep(20000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUPFBButton)));
         driver.findElement(popUPFBButton).click();
     }
     public void gmailPopUpCheckout() throws InterruptedException {
-        Thread.sleep(20000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUpGmailButton)));
         driver.findElement(popUpGmailButton).click();
     }
     public void popUPSignUPCheckoutShippingAddress(String name,String address,String phone,String zipcode) throws InterruptedException {
-        Thread.sleep(15000);
-        if(driver.findElement(shippngAddressName).isDisplayed()) {
-            driver.findElement(shippngAddressName).sendKeys(name);
-        }
-        else{
-            System.out.println("Shipping address name element not found");
-        }
-        Thread.sleep(5000);
-        if(driver.findElement(shippngAddressLine1).isDisplayed()) {
-            driver.findElement(shippngAddressLine1).sendKeys(address);
-        }
-        else{
-            System.out.println("Shipping address address line 1 element not found");
-        }
-        Thread.sleep(4000);
-        if(driver.findElement(shippngAddressState).isDisplayed()) {
-            driver.findElement(shippngAddressState).click();
-        }
-        else{
-            System.out.println("Shipping address state element not found");
-        }
-        Thread.sleep(7000);
-        if(driver.findElement(By.tagName("Dhaka")).isDisplayed()){
-            driver.findElement(shippingAddressStateValue).click();
-        }
-        else{
-            System.out.println("Shipping address state name element not found");
-        }
-        Thread.sleep(5000);
-        if(driver.findElement(shippingAddressPhoneNumber).isDisplayed()) {
-            driver.findElement(shippingAddressPhoneNumber).sendKeys(name);
-        }
-        else{
-            System.out.println("Shipping address phone number element not found");
-        }
-        Thread.sleep(5000);
-        if(driver.findElement(shippingAddressZipcode).isDisplayed()) {
-            driver.findElement(shippingAddressZipcode).sendKeys(zipcode);
-        }
-        else{
-            System.out.println("Shipping address zipcode element not found");
-        }
-        Thread.sleep(3000);
-        if(driver.findElement(shippingAddressSave).isDisplayed()) {
-            driver.findElement(shippingAddressZipcode).click();
-        }
-        else{
-            System.out.println("Shipping address save element not found");
-        }
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((shippngAddressName)));
+        driver.findElement(shippngAddressName).isDisplayed();
+        driver.findElement(shippngAddressName).sendKeys(name);
+        wait.until(ExpectedConditions.presenceOfElementLocated((shippngAddressLine1)));
+        driver.findElement(shippngAddressLine1).isDisplayed();
+        driver.findElement(shippngAddressLine1).sendKeys(address);
+        wait.until(ExpectedConditions.presenceOfElementLocated((shippngAddressState)));
+        driver.findElement(shippngAddressState).isDisplayed();
+        driver.findElement(shippngAddressState).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated((shippingAddressStateValue)));
+        driver.findElement(By.tagName("Dhaka")).isDisplayed();
+        driver.findElement(shippingAddressStateValue).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated((shippingAddressPhoneNumber)));
+        driver.findElement(shippingAddressPhoneNumber).isDisplayed();
+        driver.findElement(shippingAddressPhoneNumber).sendKeys(name);
+        wait.until(ExpectedConditions.presenceOfElementLocated((shippingAddressZipcode)));
+        driver.findElement(shippingAddressZipcode).isDisplayed();
+        driver.findElement(shippingAddressZipcode).sendKeys(zipcode);
+        wait.until(ExpectedConditions.presenceOfElementLocated((shippingAddressSave)));
+        driver.findElement(shippingAddressSave).isDisplayed();
+        driver.findElement(shippingAddressZipcode).click();
     }
 }

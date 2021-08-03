@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 
@@ -39,11 +41,11 @@ public class CategoryPage {
     }
 
     public void clickGroceriesCategory() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((FirstMenuItem)));
         driver.findElement(FirstMenuItem).click();
-        Thread.sleep(10000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(1500);
+        wait.until(ExpectedConditions.presenceOfElementLocated((groceryCategoryProduct)));
         if(driver.findElement(groceryCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -54,11 +56,11 @@ public class CategoryPage {
         }
     }
     public void clickMobileTabletCategory() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((clickCategoryMobileTablet)));
         driver.findElement(clickCategoryMobileTablet).click();
-        Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((mobileTabletCategoryProduct)));
         if(driver.findElement(mobileTabletCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -69,11 +71,11 @@ public class CategoryPage {
         }
     }
     public void clickComputerAccesoriesCategory() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((computerAccesoriesCategory)));
         driver.findElement(computerAccesoriesCategory).click();
-        Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((computerAccesoriesCategoryProduct)));
         if(driver.findElement(computerAccesoriesCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -84,11 +86,11 @@ public class CategoryPage {
         }
     }
     public void clickConsumerElectronicsCategory() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((consumerElectronicsCategory)));
         driver.findElement(consumerElectronicsCategory).click();
-        Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((consumerElectronicsCategoryProduct)));
         if(driver.findElement(consumerElectronicsCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -99,11 +101,11 @@ public class CategoryPage {
         }
     }
     public void clickEntertaintmentCategory() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((entertaintmentGamingCategory)));
         driver.findElement(entertaintmentGamingCategory).click();
-        Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((entertaintmentCategoryProduct)));
         if(driver.findElement(entertaintmentCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -114,15 +116,15 @@ public class CategoryPage {
         }
     }
     public void clickHealthBeautyCategory() throws InterruptedException, AWTException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((healthBeautyCategory)));
         driver.findElement(healthBeautyCategory).click();
-        Thread.sleep(15000);
         //Robot robot = new Robot();
        // robot.keyPress(KeyEvent.VK_PAGE_DOWN);
        // Thread.sleep(30000);
        // robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((healthBeautyCategoryProduct)));
         if(driver.findElement(healthBeautyCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -133,11 +135,11 @@ public class CategoryPage {
         }
     }
     public void womenFashionCategory() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((womenFashionCategory)));
         driver.findElement(womenFashionCategory).click();
-        Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((womenFashionCategoryProduct)));
         if(driver.findElement(womenFashionCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -148,11 +150,11 @@ public class CategoryPage {
         }
     }
     public void menFashionCategory() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((menFashionCategory)));
         driver.findElement(menFashionCategory).click();
-        Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((menFashionCategoryProduct)));
         if(driver.findElement(menFashionCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -163,11 +165,11 @@ public class CategoryPage {
         }
     }
     public void wholesaleTrade() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((wholesaleTradeCategory)));
         driver.findElement(wholesaleTradeCategory).click();
-        Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((wholesaleCategoryProduct)));
         if(driver.findElement(wholesaleCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -178,11 +180,11 @@ public class CategoryPage {
         }
     }
     public void stationaryOfficeSupplies() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((stationaryOfficeSuppliesCategory)));
         driver.findElement(stationaryOfficeSuppliesCategory).click();
-        Thread.sleep(15000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((stationaryOfficeSuppliesCategoryProduct)));
         if(driver.findElement(stationaryOfficeSuppliesCategoryProduct).isDisplayed()) {
             System.out.println("Product found");
             System.out.println("Test case passed");
@@ -193,21 +195,21 @@ public class CategoryPage {
         }
     }
     public void cookedFoodMenu() throws InterruptedException {
-        Thread.sleep(10000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((cookedFoodMenuItem)));
         driver.findElement(cookedFoodMenuItem).click();
-        Thread.sleep(10000);
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
-        Thread.sleep(15000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((cookedFoodCategoryProduct)));
         if(driver.findElement(cookedFoodCategoryProduct).isDisplayed()){
             System.out.println("Test case passed");
         }
     }
     public void moreCaterories() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((moreCategories)));
         Actions a = new Actions(driver);
         a.moveToElement(driver.findElement(moreCategories)).
         build().perform();
-        Thread.sleep(5000);
         System.out.println("Test case passed");
     }
 }

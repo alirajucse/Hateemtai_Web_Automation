@@ -16,7 +16,7 @@ public class HomePageTest extends TestBase {
         homePage=new HomePage(driver);
     }
 
-    @Test(priority = 1,groups = { "Home" })
+    @Test(priority = 1,groups = { "smoke" })
     public void verifyHomePage() {
         System.out.println("Home page test...");
         homePage=new HomePage(driver);

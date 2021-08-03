@@ -3,7 +3,9 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CountrySwitchPage {
 
@@ -21,36 +23,36 @@ public class CountrySwitchPage {
     }
 
     public void switchToUSAViewMethod() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((clickCountryIcon)));
         driver.findElement(clickCountryIcon).click();
-        Thread.sleep(8000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((switchToUSA)));
         driver.findElement(switchToUSA).click();
-        Thread.sleep(5000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((currencyDropdown)));
         //  driver.findElement(currencyDropdown).click();
         //  Thread.sleep(6000);
         WebElement element = driver.findElement(currencyDropdown);
         Select select = new Select(element);
         select.selectByVisibleText(" $ USD");
         //driver.findElement(currencyUSD).click();
-        Thread.sleep(4000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((saveButton)));
         driver.findElement(saveButton).click();
-        Thread.sleep(10000);
         }
     public void switchToBDViewMethod() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((clickCountryIcon)));
         driver.findElement(clickCountryIcon).click();
-        Thread.sleep(8000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((switchToBDView)));
         driver.findElement(switchToBDView).click();
-        Thread.sleep(5000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((currencyDropdown)));
         //  driver.findElement(currencyDropdown).click();
         //  Thread.sleep(6000);
         WebElement element = driver.findElement(currencyDropdown);
         Select select = new Select(element);
         select.selectByVisibleText(" ৳ BDT");
         //driver.findElement(currencyUSD).click();
-        Thread.sleep(4000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((saveButton)));
         driver.findElement(saveButton).click();
-        Thread.sleep(10000);
         }
     }
 

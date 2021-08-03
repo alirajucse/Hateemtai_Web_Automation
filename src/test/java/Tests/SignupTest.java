@@ -27,7 +27,7 @@ public class SignupTest extends TestBase {
         homePage=new HomePage(driver);
     }
     @Parameters({ "user","email","password","phone" })
-    @Test(priority = 1,groups = { "Sign up","smoke" })
+    @Test(priority = 1,groups = { "Sign up","smoke"})
     public void signUPTestWithValidInformation(String user,String email,String pass,String phone) throws InterruptedException {
         homePage.homeScreen();
         signupPage.signUpLinkClick();
@@ -36,13 +36,14 @@ public class SignupTest extends TestBase {
         signupPage.successfulSignUPVerify();
         loginPage.logout();
     }
-    @Test(priority = 2,groups = { "Sign up" })
-    public void popUPSignupTest() throws InterruptedException {
+    @Parameters({ "user","Email","password","phone" })
+    @Test(priority = 2,groups = { "Sign up"})
+    public void popUPSignupTest(String user,String Email,String pass,String mobile) throws InterruptedException {
+        Thread.sleep(7000);
         checkoutPage.productAddtoCart();
         signupPage.clickPopUPSignupButton();
-        signupPage.popUPSignUPCredentials("Raju","raju150@ht.com","01747359585","pP@01921666");
+        signupPage.popUPSignUPCredentials(user, Email, pass, mobile);
         signupPage.successfulSignUPVerify();
-        loginPage.logout();
     }
     @Test(priority = 3,groups = { "Sign up" })
     public void existingUserSignUpTest() throws InterruptedException {

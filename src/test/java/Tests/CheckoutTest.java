@@ -24,16 +24,17 @@ public class CheckoutTest extends TestBase{
         homePage=new HomePage(driver);
     }
     @Parameters({ "email", "password" })
-    @Test(priority = 1,groups = { "Checkout","smoke" })
+    @Test(priority = 1,groups = { "smoke" })
     public void checkOutTestWithExistingUser(String email,String pass) throws InterruptedException {
         loginPage.clickLoginText();
         loginPage.LoginCredentialInput(email,pass);
         loginPage.clickLoginButton();
-        checkoutPage.checkoutViaCartDetails();
+        checkoutPage.productAddtoCart();
+        //checkoutPage.checkoutViaCartDetails();
         checkoutPage.checkoutMethod();
         loginPage.logout();
     }
-    @Test(priority = 2,groups = { "Checkout" })
+    @Test(priority = 2,groups = { "smoke" })
     public void checkoutWithAddProductFromQuickView() throws InterruptedException {
         homePage.homeScreen();
         loginPage.clickLoginText();
@@ -43,7 +44,7 @@ public class CheckoutTest extends TestBase{
         checkoutPage.checkoutMethod();
         loginPage.logout();
     }
-    @Test(priority = 3,groups = { "Checkout" })
+    @Test(priority = 3,groups = { "smoke" })
     public void popUPCheckoutTest() throws InterruptedException {
         homePage.homeScreen();
         checkoutPage.productAddtoCart();
@@ -52,7 +53,7 @@ public class CheckoutTest extends TestBase{
         checkoutPage.checkoutMethod();
         loginPage.logout();
     }
-    @Test(priority = 4,groups = { "Checkout" })
+    @Test(priority = 4,groups = { "smoke" })
     public void popUPFBCheckoutTest() throws InterruptedException {
         homePage.homeScreen();
         checkoutPage.checkoutViaCartDetails();
@@ -61,14 +62,14 @@ public class CheckoutTest extends TestBase{
         checkoutPage.checkoutMethod();
         loginPage.logout();
     }
-    @Test(priority = 5,groups = { "C" })
+    @Test(priority = 5,groups = { "smoke" })
     public void popUpGmailCheckoutTest() throws InterruptedException {
         checkoutPage.productAddtoCart();
         loginPage.popUPGmailLogin();
         loginPage.gmailCredentials("alirajujnu1@gmail.com","pP@01921666");
         checkoutPage.checkoutMethod();
    }
-   @Test(priority = 6,groups = { "C" })
+   @Test(priority = 6,groups = { "smoke" })
    public void popUPSignUPCheckoutTest() throws InterruptedException {
         checkoutPage.productAddtoCart();
         signupPage.clickPopUPSignupButton();

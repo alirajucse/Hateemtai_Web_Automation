@@ -2,6 +2,8 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MyAccountPage {
     private WebDriver driver;
@@ -17,27 +19,28 @@ public class MyAccountPage {
     }
 
     public void myAccountHomePage() throws InterruptedException {
-        Thread.sleep(20000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((myAccount)));
         driver.findElement(myAccount).click();
-        Thread.sleep(3000);
     }
     public void myProfileSection() throws InterruptedException {
-        Thread.sleep(10000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((myProfile)));
         driver.findElement(myProfile).click();
-        Thread.sleep(5000);
     }
     public void myOrder() throws InterruptedException {
-        Thread.sleep(5000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((myOrder)));
         driver.findElement(myOrder).click();
-        Thread.sleep(3000);
         String amount=driver.findElement(orderAmount).getText();
         //float orderAmountVerify=Float.parseFloat(amount);
         System.out.println(amount);
     }
     public void corporateSaleSection() throws InterruptedException {
-        Thread.sleep(5000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((corporateSale)));
         driver.findElement(corporateSale).click();
-        Thread.sleep(4000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((corporateSalePriceRequest)));
         if(driver.findElement(corporateSalePriceRequest).isEnabled()){
             driver.findElement(corporateSalePriceRequest).click();
         }

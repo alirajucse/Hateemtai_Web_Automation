@@ -2,6 +2,8 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignupPage {
 
@@ -34,32 +36,34 @@ public class SignupPage {
     }
 
     public void signUpLinkClick() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated(signuplink));
         driver.findElement(signuplink).click();
     }
 
     public void signUPInformationInputMethod(String username,String email,String password,String phone) throws InterruptedException {
-
-        Thread.sleep(20000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((usernameField)));
         driver.findElement(usernameField).sendKeys(username);
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((emailField)));
         driver.findElement(emailField).sendKeys(email);
-        Thread.sleep(4000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((passwordField)));
         driver.findElement(passwordField).sendKeys(password);
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((phonenumberField)));
         driver.findElement(phonenumberField).sendKeys(phone);
-        Thread.sleep(3000);
     }
 
     public void signUPFinalProcessMethod() throws InterruptedException {
-
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((agreeCheckbox)));
         driver.findElement(agreeCheckbox).click();
-        Thread.sleep(20000);
+        wait.until(ExpectedConditions.presenceOfElementLocated((signupButton)));
         driver.findElement(signupButton).click();
     }
 
     public void successfulSignUPVerify() throws InterruptedException {
-        Thread.sleep(20000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((signUPVerify)));
         Boolean signUpVerify= driver.findElement(signUPVerify).isDisplayed();
         if(signUpVerify){
             System.out.println("Sign up successful");
@@ -70,7 +74,8 @@ public class SignupPage {
 
     }
     public void clickPopUPSignupButton() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUPSignup)));
         if(driver.findElement(popUPSignup).isDisplayed()){
             driver.findElement(popUPSignup).click();
         }
@@ -79,51 +84,23 @@ public class SignupPage {
         }
     }
     public void popUPSignUPCredentials(String usrName,String email,String phone,String passwrd) throws InterruptedException {
-        Thread.sleep(5000);
-        if(driver.findElement(popUpUserName).isDisplayed()){
-            driver.findElement(popUpUserName).sendKeys(usrName);
-        }
-        else{
-            System.out.println("Pop up user name input element not found");
-        }
-        Thread.sleep(2000);
-        if(driver.findElement(popUPEmail).isDisplayed()){
-            driver.findElement(popUPEmail).sendKeys(email);
-        }
-        else{
-            System.out.println("Pop up email input element not found");
-        }
-        Thread.sleep(2000);
-        if(driver.findElement(popUPPhoneNUmber).isDisplayed()){
-            driver.findElement(popUPPhoneNUmber).sendKeys(phone);
-        }
-        else{
-            System.out.println("Pop up phone number element not found");
-        }
-        Thread.sleep(2000);
-        if(driver.findElement(popUPPassword).isDisplayed()){
-            driver.findElement(popUPPassword).sendKeys(passwrd);
-        }
-        else{
-            System.out.println("Pop up password element not found");
-        }
-        Thread.sleep(3000);
-        if(driver.findElement(popUPAgreeCheckbox).isDisplayed()){
-            driver.findElement(popUPAgreeCheckbox).click();
-        }
-        else{
-            System.out.println("Pop up agree checkbox element not found");
-        }
-        Thread.sleep(4000);
-        if(driver.findElement(popUPSignUPButton).isDisplayed()){
-            driver.findElement(popUPSignUPButton).click();
-        }
-        else{
-            System.out.println("Pop up sign up button not found");
-        }
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUpUserName)));
+        driver.findElement(popUpUserName).sendKeys(usrName);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUPEmail)));
+        driver.findElement(popUPEmail).sendKeys(email);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUPPhoneNUmber)));
+        driver.findElement(popUPPhoneNUmber).sendKeys(phone);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUPPassword)));
+        driver.findElement(popUPPassword).sendKeys(passwrd);
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUPAgreeCheckbox)));
+        driver.findElement(popUPAgreeCheckbox).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated((popUPSignUPButton)));
+        driver.findElement(popUPSignUPButton).click();
     }
     public void existingUserSignUpCheck() throws InterruptedException {
-        Thread.sleep(15000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated((existingUserSignUpCheck)));
         if(driver.findElement(existingUserSignUpCheck).isDisplayed()){
             System.out.println("Test case passed");
         }
